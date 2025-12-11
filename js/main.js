@@ -8,12 +8,17 @@ const nav = document.querySelector('nav');
 if (menuHamburguesa && nav) {
     menuHamburguesa.addEventListener('click', () => {
         nav.classList.toggle('activo');
-        // Cambiar icono del menú
-        const icono = menuHamburguesa.querySelector('.material-icons');
+        
+        // Cambiar imagen del menú y aplicar clase activo solo al icono
+        const icono = menuHamburguesa.querySelector('img');
+        icono.classList.toggle('activo');
+        
         if (nav.classList.contains('activo')) {
-            icono.textContent = 'close';
+            icono.src = 'assets/icons/xmenuicon.png';
+            icono.alt = 'Cerrar menú';
         } else {
-            icono.textContent = 'menu';
+            icono.src = 'assets/icons/menuicon.png';
+            icono.alt = 'Icono de menú';
         }
     });
 
@@ -22,8 +27,11 @@ if (menuHamburguesa && nav) {
     enlacesNav.forEach(enlace => {
         enlace.addEventListener('click', () => {
             nav.classList.remove('activo');
-            const icono = menuHamburguesa.querySelector('.material-icons');
-            icono.textContent = 'menu';
+            
+            const icono = menuHamburguesa.querySelector('img');
+            icono.classList.remove('activo');
+            icono.src = 'assets/icons/menuicon.png';
+            icono.alt = 'Icono de menú';
         });
     });
 }

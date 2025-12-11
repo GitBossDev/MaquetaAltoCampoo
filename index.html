@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alto Campoo - Turismo Rural</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700&family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon e iconos en moviles-->
-    <link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./img/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="Alto Campoo" />
-    <link rel="manifest" href="./img/favicon/site.webmanifest" />
+    <link rel="manifest" href="./assets/favicon/site.webmanifest" />
     <!-- Enlace a JS-->
     <script src="js/main.js" defer></script>
 </head>
@@ -22,21 +21,22 @@
     <header>
         <div class="contenedor-header">
             <div class="logo">
-                <a href="index.html"><img src="img/icons/logotipoheader.png" alt="Logo Alto Campoo"></a>
+                <a href="index.html"><img src="assets/icons/logotipoheader.png" alt="Logo Alto Campoo"></a>
             </div>
-            <div class="idioma">
-                <a href=""><img src="img/icons/translateicon.png" alt="Icono de idioma"></a>
+            <div class="grupo-iconos-derecha">
+                <div class="idioma">
+                    <a href=""><img src="assets/icons/translateicon.png" alt="Icono de idioma"></a>
+                </div>
+                <div class="busqueda">
+                    <a href=""><img src="assets/icons/searchicon.png" alt="Icono de búsqueda"></a>
+                </div>
+                <button class="menu-hamburguesa" aria-label="Abrir menú">
+                    <img src="assets/icons/menuicon.png" alt="Icono de menú">
+                </button>
             </div>
-            <div class="busqueda">
-                <a href=""><img src="img/icons/searchicon.png" alt="Icono de búsqueda"></a>
-            </div>
-            <button class="menu-hamburguesa" aria-label="Abrir menú">
-                <span class="material-icons">menu</span>
-            </button>
         </div>
         <nav>
             <ul>
-                <li><a href="index.html">Inicio</a></li>
                 <li><a href="pages/quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="pages/mapa-rutas.html">Mapa de Rutas</a></li>
                 <li><a href="pages/ultimas-novedades.html">Noticias</a></li>
@@ -61,13 +61,13 @@
             <h2>Últimas Novedades</h2>
             <div class="cuadricula-noticias">
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
-                    <img src="img/photos/noticia1index.png" alt="Noticia 1">
+                    <img src="assets/img/noticia1index.png" alt="Noticia 1">
                     <h3>Inicio de nueva temporada de esquí</h3>
                     <p>La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026.</p>
                     <p>Leer más...</p>
                 </article></a>
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
-                    <img src="img/photos/noticia2index.png" alt="Noticia 2">
+                    <img src="assets/img/noticia2index.png" alt="Noticia 2">
                     <h3>Nueva máquina pisapistas en Alto Campoo</h3>
                     <p>El Consejero de Turismo visita Alto Campoo con motivo de la incorporación de una nueva máquina pisapistas, dotada con tecnología SNOWsat, que se suma a las cuatro máquinas ya existentes en la estación.</p>
                     <p>Leer más...</p>
@@ -84,7 +84,7 @@
                 </button>
                 <div class="carrusel-rutas">
                     <div class="tarjeta-ruta">
-                        <img src="img/photos/ruta1index.JPG" alt="Ruta 1">
+                        <img src="assets/img/ruta1index.JPG" alt="Ruta 1">
                         <div class="contenido-tarjeta">
                             <h3>Sendero de los Puentes</h3>
                             <p>Dificultad: Media | Duración: 2h 30min</p>
@@ -92,7 +92,7 @@
                         </div>
                     </div>
                     <div class="tarjeta-ruta">
-                        <img src="img/photos/ruta2index.JPG" alt="Ruta 2">
+                        <img src="assets/img/ruta2index.JPG" alt="Ruta 2">
                         <div class="contenido-tarjeta">
                             <h3>Pico Tres Mares</h3>
                             <p>Dificultad: Alta | Duración: 4h 15min</p>
@@ -100,7 +100,7 @@
                         </div>
                     </div>
                     <div class="tarjeta-ruta">
-                        <img src="img/photos/ruta3index.JPG" alt="Ruta 3">
+                        <img src="assets/img/ruta3index.JPG" alt="Ruta 3">
                         <div class="contenido-tarjeta">
                             <h3>Valle del Híjar</h3>
                             <p>Dificultad: Baja | Duración: 1h 45min</p>
@@ -117,13 +117,26 @@
                 <span class="indicador"></span>
                 <span class="indicador"></span>
             </div>
-            <a href="pages/mapa-rutas.html" class="boton-secundario">Ver Todas las Rutas</a>
+            <div class="contenedor-boton-centrado">
+                <a href="pages/mapa-rutas.html" class="boton-secundario">Ver Todas las Rutas</a>
+            </div>
         </section>
     </main>
 
-    </main>
-
     <footer>
+        <div class="seccion-sponsors">
+            <div class="logos-sponsors">
+                <div class="logo-sponsor">
+                    <img src="assets/icons/sponsor1.webp" alt="Sponsor 1">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="assets/icons/sponsor2.png" alt="Sponsor 2">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="assets/icons/sponsor3.png" alt="Sponsor 3">
+                </div>
+            </div>
+        </div>
         <div class="contenido-pie">
             <div class="seccion-pie">
                 <h4>Alto Campoo Turismo</h4>

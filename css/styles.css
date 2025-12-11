@@ -1,4 +1,42 @@
 /* ============================================
+   FUENTES LOCALES
+   ============================================ */
+
+@font-face {
+    font-family: 'Alumni Sans';
+    src: url('../assets/fonts/alumni-sans/AlumniSans-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alumni Sans';
+    src: url('../assets/fonts/alumni-sans/AlumniSans-Italic-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/roboto/Roboto-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Roboto';
+    src: url('../assets/fonts/roboto/Roboto-Italic-VariableFont_wdth,wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-stretch: 75% 100%;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ============================================
    VARIABLES CSS - ALTO CAMPOO TURISMO
    ============================================ */
 
@@ -24,13 +62,14 @@
     --fuente-texto: 'Roboto', sans-serif;
     
     /* Tamaños de fuente - Mobile First (<=768px) */
-    --tamano-h1: 36px;
-    --tamano-h2: 28px;
-    --tamano-h3: 24px;
-    --tamano-h4: 20px;
-    --tamano-texto: 16px;
-    --tamano-texto-pequenio: 14px;
-    --tamano-boton: 18px;
+    --tamano-h1: 2.25rem; /* 36px */
+    --tamano-h2: 1.75rem; /* 28px */
+    --tamano-h3: 1.5rem; /* 24px */
+    --tamano-h4: 1.25rem; /* 20px */
+    --tamano-texto: 1rem; /* 16px */
+    --tamano-texto-pequenio: 0.875rem; /* 14px */
+    --tamano-boton-primario: 1.125rem; /* 18px */
+    --tamano-boton-secundario: 1rem; /* 16px */
     
     /* Pesos de fuente */
     --peso-titulos: 700;
@@ -40,16 +79,16 @@
     --peso-negrita: 700;
     
     /* Espaciado */
-    --espaciado-pequenio: 8px;
-    --espaciado-medio: 16px;
-    --espaciado-grande: 24px;
-    --espaciado-xlarge: 32px;
-    --espaciado-xxlarge: 48px;
+    --espaciado-pequenio: 0.5rem; /* 8px */
+    --espaciado-medio: 1rem; /* 16px */
+    --espaciado-grande: 1.5rem; /* 24px */
+    --espaciado-xlarge: 2rem; /* 32px */
+    --espaciado-xxlarge: 3rem; /* 48px */
     
     /* Bordes */
-    --radio-borde: 8px;
-    --radio-borde-pequenio: 4px;
-    --grosor-borde: 2px;
+    --radio-borde: 0.5rem; /* 8px */
+    --radio-borde-pequenio: 0.25rem; /* 4px */
+    --grosor-borde: 0.125rem; /* 2px */
     
     /* Sombras */
     --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -163,7 +202,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: var(--espaciado-pequenio);
 }
 
 header .logo {
@@ -171,8 +209,32 @@ header .logo {
 }
 
 header .logo img {
-    height: 40px;
+    height: 2.2rem; /* 40px */
     width: auto;
+}
+
+/* Grupo de iconos de la derecha */
+.grupo-iconos-derecha {
+    display: flex;
+    align-items: center;
+    /* VARIABLE 1: Espacio base entre los 3 iconos */
+    gap: 0.7rem; /* 11px - Ajusta para más/menos separación */
+}
+
+.grupo-iconos-derecha .idioma,
+.grupo-iconos-derecha .busqueda,
+.grupo-iconos-derecha .menu-hamburguesa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Líneas separadoras verticales entre iconos */
+.grupo-iconos-derecha .busqueda,
+.grupo-iconos-derecha .menu-hamburguesa {
+    border-left: 0.1rem solid var(--blanco-nieve); /* 1px */
+    /* VARIABLE 2: Espacio adicional después de la línea separadora */
+    padding-left: 0.7rem; /* 11px - Espacio después de la línea */
 }
 
 header .idioma a,
@@ -180,57 +242,40 @@ header .busqueda a {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--espaciado-pequenio);
 }
 
+/* VARIABLE 3: Tamaño de todos los iconos */
 header .idioma img,
-header .busqueda img {
-    height: 24px;
-    width: 24px;
+header .busqueda img,
+header .menu-hamburguesa img {
+    height: 2.2rem; /* 24px - Ajusta para iconos más grandes/pequeños */
+    width: 2.2rem; /* 24px */
 }
 
-.barra-busqueda {
-    display: flex;
-    align-items: center;
-    gap: var(--espaciado-pequenio);
-    background-color: #ffffff;
-    padding: var(--espaciado-pequenio) var(--espaciado-medio);
-    border-radius: var(--radio-borde);
-    margin: var(--espaciado-medio) 0;
-}
-
-.barra-busqueda .material-icons {
-    color: var(--verde-montania);
-    font-size: 20px;
-}
-
-.barra-busqueda input {
-    border: none;
-    outline: none;
-    flex: 1;
-    background: transparent;
-    color: var(--negro-profundo);
-}
-
-.barra-busqueda input::placeholder {
-    color: var(--gris-sombra);
-}
-
+/* Menú hamburguesa */
 .menu-hamburguesa {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: var(--espaciado-pequenio);
     color: var(--blanco-nieve);
-    border-radius: var(--radio-borde);
+    background: transparent;
+    cursor: pointer;
 }
 
-.menu-hamburguesa .material-icons {
-    font-size: 28px;
+.menu-hamburguesa img {
+    height: 2.5rem; /* 40px */
+    width: 2.5rem; /* 40px */
+    transition: var(--transicion-rapida);
 }
 
-.menu-hamburguesa:hover {
+.menu-hamburguesa:hover img,
+.menu-hamburguesa:focus img {
+    opacity: 0.8;
+}
+
+.menu-hamburguesa img.activo {
     background-color: var(--verde-bosque-hover);
+    border-radius: var(--radio-borde-pequenio);
 }
 
 /* Navegación oculta por defecto en móvil */
@@ -275,19 +320,17 @@ nav a:focus {
    ============================================ */
 
 .heroe {
-    /* Imagen de fondo ajustada automáticamente en ancho desde el centro */
-    background-image: url('../img/photos/herophoto.jpg');
+    /* Imagen de fondo ligeramente oscurecida */
+    background-image: url('../assets/img/herophoto.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 400px;
-    
+    background-color: rgba(0, 0, 0, 0.15);
+    background-blend-mode: overlay;
+    min-height: 450px;
     color: var(--blanco-nieve);
     padding: var(--espaciado-xxlarge) var(--espaciado-medio);
     text-align: center;
-    /* Texto con sombra tenue para diferenciar de fondo claro */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -297,18 +340,20 @@ nav a:focus {
 .heroe h1 {
     color: var(--blanco-nieve);
     margin-bottom: var(--espaciado-medio);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .heroe p {
     font-size: var(--tamano-texto);
     max-width: 600px;
     margin: 0 auto var(--espaciado-grande);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .acciones-heroe {
     display: flex;
     flex-direction: column;
-    gap: var(--espaciado-medio);
+    gap: var(--espaciado-pequenio);
     align-items: center;
 }
 
@@ -319,44 +364,53 @@ nav a:focus {
 .boton-primario,
 .boton-secundario {
     display: inline-block;
+    justify-content: center;
     padding: var(--espaciado-medio) var(--espaciado-grande);
-    font-size: var(--tamano-boton);
     font-weight: var(--peso-medio);
     border-radius: var(--radio-borde);
     text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
     transition: var(--transicion-rapida);
     cursor: pointer;
-    min-width: 200px;
+    text-decoration: none;
+    min-width: 12.5rem; /* 200px */
 }
 
 /* Botón primario - Relleno verde */
 .boton-primario {
-    background-color: var(--verde-claro);
-    color: var(--negro-profundo);
-    border: var(--grosor-borde) solid var(--verde-claro);
+    background-color: var(--verde-bosque);
+    color: var(--blanco-nieve);
+    border: var(--grosor-borde) solid var(--verde-bosque);
+    font-size: var(--tamano-boton-primario);
 }
 
 .boton-primario:hover,
 .boton-primario:focus {
-    background-color: var(--verde-claro-hover);
-    border-color: var(--verde-claro-hover);
+    background-color: var(--verde-bosque-hover);
+    border-color: var(--verde-bosque-hover);
     transform: translateY(-2px);
     box-shadow: var(--sombra-media);
 }
 
-/* Botón secundario - Solo borde */
+/* Botón secundario - Ligeramente más pequeño */
 .boton-secundario {
-    background-color: transparent;
+    background-color: var(--blanco-nieve);
     color: var(--verde-montania);
     border: var(--grosor-borde) solid var(--verde-montania);
+    font-size: var(--tamano-boton-secundario);
+    min-width: 11rem;
+    padding: 0.875rem var(--espaciado-grande); /* 14px vertical */
 }
 
 .boton-secundario:hover,
 .boton-secundario:focus {
-    background-color: var(--verde-montania);
+    background-color: var(--verde-montania-hover);
     color: var(--blanco-nieve);
     transform: translateY(-2px);
     box-shadow: var(--sombra-media);
+    border: var(--grosor-borde) solid var(--verde-montania-hover);
+
 }
 
 /* ============================================
@@ -463,7 +517,7 @@ section h2 {
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding: var(--espaciado-pequenio) 0;
-    margin: 0 var(--espaciado-xlarge);
+    margin: 0 var(--espaciado-grande);
     /* Ocultar scrollbar pero mantener funcionalidad */
     scrollbar-width: none;
     -ms-overflow-style: none;
@@ -474,7 +528,7 @@ section h2 {
 }
 
 .tarjeta-ruta {
-    flex: 0 0 85%;
+    flex: 0 0 80%;
     background-color: #ffffff;
     border-radius: var(--radio-borde);
     overflow: hidden;
@@ -521,7 +575,7 @@ section h2 {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background-color: var(--verde-montania);
+    background-color: var(--verde-bosque);
     color: var(--blanco-nieve);
     border: none;
     border-radius: 50%;
@@ -537,11 +591,11 @@ section h2 {
 }
 
 .boton-carrusel:hover {
-    background-color: var(--verde-montania-hover);
+    background-color: var(--verde-bosque-hover);
 }
 
 .boton-carrusel .material-icons {
-    font-size: 28px;
+    font-size: 36px;
 }
 
 .boton-anterior {
@@ -570,9 +624,16 @@ section h2 {
 }
 
 .indicador.activo {
-    background-color: var(--verde-montania);
-    width: 24px;
-    border-radius: 5px;
+    background-color: var(--verde-bosque);
+    width: 1.5rem; /* 24px */
+    border-radius: 0.3125rem; /* 5px */
+}
+
+/* Contenedor para centrar botón */
+.contenedor-boton-centrado {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--espaciado-grande);
 }
 
 /* ============================================
@@ -1038,6 +1099,44 @@ footer {
     background-color: var(--verde-bosque);
     color: var(--blanco-nieve);
     padding: var(--espaciado-xlarge) var(--espaciado-medio) var(--espaciado-medio);
+}
+
+/* Sección de Sponsors */
+.seccion-sponsors {
+    text-align: center;
+    padding-bottom: var(--espaciado-medio);
+    margin-bottom: var(--espaciado-medio);
+}
+
+.seccion-sponsors h4 {
+    color: var(--verde-claro);
+    margin-bottom: var(--espaciado-medio);
+    font-size: var(--tamano-h3);
+}
+
+.logos-sponsors {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-grande);
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-sponsor {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 18.75rem; /* 300px */
+    height: 3.5rem; /* 64px */
+    transition: var(--transicion-rapida);
+}
+
+.logo-sponsor img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
 }
 
 .contenido-pie {
