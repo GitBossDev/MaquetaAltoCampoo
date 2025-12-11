@@ -7,19 +7,33 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@600;700&family=Roboto:wght@400;500;700&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Favicon e iconos en moviles-->
+    <link rel="icon" type="image/png" href="./img/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="./img/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="./img/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Alto Campoo" />
+    <link rel="manifest" href="./img/favicon/site.webmanifest" />
+    <!-- Enlace a JS-->
+    <script src="js/main.js" defer></script>
 </head>
+
 <body>
     <header>
-        <div class="logo">
-            <img src="img/logo.png" alt="Logo Alto Campoo">
+        <div class="contenedor-header">
+            <div class="logo">
+                <a href="index.html"><img src="img/icons/logotipoheader.png" alt="Logo Alto Campoo"></a>
+            </div>
+            <div class="idioma">
+                <a href=""><img src="img/icons/translateicon.png" alt="Icono de idioma"></a>
+            </div>
+            <div class="busqueda">
+                <a href=""><img src="img/icons/searchicon.png" alt="Icono de búsqueda"></a>
+            </div>
+            <button class="menu-hamburguesa" aria-label="Abrir menú">
+                <span class="material-icons">menu</span>
+            </button>
         </div>
-        <div class="barra-busqueda">
-            <span class="material-icons">search</span>
-            <input type="search" placeholder="Buscar...">
-        </div>
-        <button class="menu-hamburguesa" aria-label="Abrir menú">
-            <span class="material-icons">menu</span>
-        </button>
         <nav>
             <ul>
                 <li><a href="index.html">Inicio</a></li>
@@ -34,58 +48,79 @@
     </header>
 
     <main>
-        <section class="hero">
-            <h1>Descubre la naturaleza en Alto Campoo</h1>
-            <p>Explora rutas únicas en el corazón de la montaña</p>
-            <div class="acciones-hero">
-                <a href="pages/mapa-rutas.html" class="boton-primario">Explorar Rutas</a>
-                <a href="pages/quienes-somos.html" class="boton-secundario">Conocer Más</a>
+        <section class="heroe">
+            <h1>Alto Campoo todo el año</h1>
+            <p>Explora nuestras rutas durante todas las estaciones</p>
+            <div class="acciones-heroe">
+                <a href="pages/mapa-rutas.html" class="boton-primario">Ver Rutas</a>
+                <a href="pages/quienes-somos.html" class="boton-secundario">Conócenos</a>
             </div>
         </section>
 
         <section class="noticias">
             <h2>Últimas Novedades</h2>
             <div class="cuadricula-noticias">
-                <article class="tarjeta-noticia">
-                    <img src="img/noticias/noticia-1.jpg" alt="Noticia 1">
-                    <h3>Apertura de nueva ruta invernal</h3>
-                    <p>Descubre el nuevo sendero acondicionado para disfrutar durante el invierno con vistas espectaculares.</p>
-                    <a href="pages/noticia.html">Leer más</a>
-                </article>
-                <article class="tarjeta-noticia">
-                    <img src="img/noticias/noticia-2.jpg" alt="Noticia 2">
-                    <h3>Eventos culturales de verano</h3>
-                    <p>No te pierdas la programación de actividades culturales que tenemos preparadas para esta temporada.</p>
-                    <a href="pages/noticia.html">Leer más</a>
-                </article>
+                <a href="pages/noticia.html"><article class="tarjeta-noticia">
+                    <img src="img/photos/noticia1index.png" alt="Noticia 1">
+                    <h3>Inicio de nueva temporada de esquí</h3>
+                    <p>La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026.</p>
+                    <p>Leer más...</p>
+                </article></a>
+                <a href="pages/noticia.html"><article class="tarjeta-noticia">
+                    <img src="img/photos/noticia2index.png" alt="Noticia 2">
+                    <h3>Nueva máquina pisapistas en Alto Campoo</h3>
+                    <p>El Consejero de Turismo visita Alto Campoo con motivo de la incorporación de una nueva máquina pisapistas, dotada con tecnología SNOWsat, que se suma a las cuatro máquinas ya existentes en la estación.</p>
+                    <p>Leer más...</p>
+                </article></a>
             </div>
             <a href="pages/ultimas-novedades.html" class="boton-secundario">Ver Más Noticias</a>
         </section>
 
         <section class="rutas">
             <h2>Rutas Destacadas</h2>
-            <div class="carrusel-rutas">
-                <div class="tarjeta-ruta">
-                    <img src="img/rutas/ruta-1.jpg" alt="Ruta 1">
-                    <h3>Sendero de los Puentes</h3>
-                    <p>Dificultad: Media | Duración: 2h 30min</p>
-                    <a href="pages/ruta.html">Ver Detalles</a>
+            <div class="contenedor-carrusel">
+                <button class="boton-carrusel boton-anterior" aria-label="Ruta anterior">
+                    <span class="material-icons">chevron_left</span>
+                </button>
+                <div class="carrusel-rutas">
+                    <div class="tarjeta-ruta">
+                        <img src="img/photos/ruta1index.JPG" alt="Ruta 1">
+                        <div class="contenido-tarjeta">
+                            <h3>Sendero de los Puentes</h3>
+                            <p>Dificultad: Media | Duración: 2h 30min</p>
+                            <a href="pages/ruta.html" class="boton-primario">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <div class="tarjeta-ruta">
+                        <img src="img/photos/ruta2index.JPG" alt="Ruta 2">
+                        <div class="contenido-tarjeta">
+                            <h3>Pico Tres Mares</h3>
+                            <p>Dificultad: Alta | Duración: 4h 15min</p>
+                            <a href="pages/ruta.html" class="boton-primario">Ver Detalles</a>
+                        </div>
+                    </div>
+                    <div class="tarjeta-ruta">
+                        <img src="img/photos/ruta3index.JPG" alt="Ruta 3">
+                        <div class="contenido-tarjeta">
+                            <h3>Valle del Híjar</h3>
+                            <p>Dificultad: Baja | Duración: 1h 45min</p>
+                            <a href="pages/ruta.html" class="boton-primario">Ver Detalles</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="tarjeta-ruta">
-                    <img src="img/rutas/ruta-2.jpg" alt="Ruta 2">
-                    <h3>Pico Tres Mares</h3>
-                    <p>Dificultad: Alta | Duración: 4h 15min</p>
-                    <a href="pages/ruta.html">Ver Detalles</a>
-                </div>
-                <div class="tarjeta-ruta">
-                    <img src="img/rutas/ruta-3.jpg" alt="Ruta 3">
-                    <h3>Valle del Híjar</h3>
-                    <p>Dificultad: Baja | Duración: 1h 45min</p>
-                    <a href="pages/ruta.html">Ver Detalles</a>
-                </div>
+                <button class="boton-carrusel boton-siguiente" aria-label="Ruta siguiente">
+                    <span class="material-icons">chevron_right</span>
+                </button>
+            </div>
+            <div class="indicadores-carrusel">
+                <span class="indicador activo"></span>
+                <span class="indicador"></span>
+                <span class="indicador"></span>
             </div>
             <a href="pages/mapa-rutas.html" class="boton-secundario">Ver Todas las Rutas</a>
         </section>
+    </main>
+
     </main>
 
     <footer>
@@ -123,7 +158,5 @@
             <p><a href="pages/politica-privacidad.html">Política y Privacidad</a></p>
         </div>
     </footer>
-
-    <script src="js/main.js"></script>
 </body>
 </html>

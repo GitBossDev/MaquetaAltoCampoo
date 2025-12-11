@@ -4,9 +4,10 @@
 
 :root {
     /* Colores principales */
-    --verde-bosque: #00423F;
-    --verde-montania: #388F4C;
-    --verde-claro: #8EB856;
+    --verde-bosque: #004441;
+    --verde-cerceta: #008071;
+    --verde-montania: #36944B;
+    --verde-claro: #91C24E;
     
     /* Colores de texto */
     --negro-profundo: #161616;
@@ -150,7 +151,7 @@ p {
    ============================================ */
 
 header {
-    background-color: var(--blanco-nieve);
+    background-color: var(--verde-bosque);
     padding: var(--espaciado-medio);
     box-shadow: var(--sombra-suave);
     position: sticky;
@@ -158,9 +159,34 @@ header {
     z-index: 1000;
 }
 
+.contenedor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--espaciado-pequenio);
+}
+
+header .logo {
+    flex: 0 0 auto;
+}
+
 header .logo img {
-    height: 48px;
+    height: 40px;
     width: auto;
+}
+
+header .idioma a,
+header .busqueda a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaciado-pequenio);
+}
+
+header .idioma img,
+header .busqueda img {
+    height: 24px;
+    width: 24px;
 }
 
 .barra-busqueda {
@@ -195,7 +221,6 @@ header .logo img {
     align-items: center;
     justify-content: center;
     padding: var(--espaciado-pequenio);
-    background-color: var(--verde-montania);
     color: var(--blanco-nieve);
     border-radius: var(--radio-borde);
 }
@@ -205,7 +230,7 @@ header .logo img {
 }
 
 .menu-hamburguesa:hover {
-    background-color: var(--verde-montania-hover);
+    background-color: var(--verde-bosque-hover);
 }
 
 /* Navegación oculta por defecto en móvil */
@@ -215,7 +240,7 @@ nav {
     top: 100%;
     left: 0;
     right: 0;
-    background-color: var(--blanco-nieve);
+    background-color: var(--verde-bosque);
     box-shadow: var(--sombra-media);
     padding: var(--espaciado-medio);
 }
@@ -233,7 +258,7 @@ nav ul {
 nav a {
     display: block;
     padding: var(--espaciado-pequenio);
-    color: var(--negro-profundo);
+    color: var(--blanco-nieve);
     font-weight: var(--peso-medio);
     border-radius: var(--radio-borde-pequenio);
     transition: var(--transicion-rapida);
@@ -241,8 +266,8 @@ nav a {
 
 nav a:hover,
 nav a:focus {
-    background-color: var(--verde-claro);
-    color: var(--negro-profundo);
+    background-color: var(--verde-bosque-hover);
+    color: var(--blanco-nieve);
 }
 
 /* ============================================
@@ -250,10 +275,23 @@ nav a:focus {
    ============================================ */
 
 .heroe {
-    background-color: var(--verde-bosque);
+    /* Imagen de fondo ajustada automáticamente en ancho desde el centro */
+    background-image: url('../img/photos/herophoto.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 400px;
+    
     color: var(--blanco-nieve);
     padding: var(--espaciado-xxlarge) var(--espaciado-medio);
     text-align: center;
+    /* Texto con sombra tenue para diferenciar de fondo claro */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .heroe h1 {
@@ -346,6 +384,9 @@ section h2 {
 .noticias,
 .lista-noticias {
     background-color: #ffffff;
+    /* elementos centrados horizontalmente */
+    display: grid;
+    place-items: center;
 }
 
 .cuadricula-noticias,
@@ -409,19 +450,37 @@ section h2 {
     background-color: var(--blanco-nieve);
 }
 
+.contenedor-carrusel {
+    position: relative;
+    margin-bottom: var(--espaciado-medio);
+}
+
 .carrusel-rutas {
     display: flex;
-    flex-direction: column;
-    gap: var(--espaciado-grande);
-    margin-bottom: var(--espaciado-grande);
+    gap: var(--espaciado-medio);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--espaciado-pequenio) 0;
+    margin: 0 var(--espaciado-xlarge);
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carrusel-rutas::-webkit-scrollbar {
+    display: none;
 }
 
 .tarjeta-ruta {
+    flex: 0 0 85%;
     background-color: #ffffff;
     border-radius: var(--radio-borde);
     overflow: hidden;
     box-shadow: var(--sombra-suave);
     transition: var(--transicion-media);
+    scroll-snap-align: center;
 }
 
 .tarjeta-ruta:hover {
@@ -435,26 +494,85 @@ section h2 {
     object-fit: cover;
 }
 
+.contenido-tarjeta {
+    padding: var(--espaciado-medio);
+}
+
 .tarjeta-ruta h3 {
     color: var(--verde-bosque);
-    margin: var(--espaciado-medio);
+    margin-bottom: var(--espaciado-pequenio);
 }
 
 .tarjeta-ruta p {
-    margin: 0 var(--espaciado-medio) var(--espaciado-medio);
+    margin-bottom: var(--espaciado-medio);
     color: var(--gris-sombra);
     font-size: var(--tamano-texto-pequenio);
 }
 
-.tarjeta-ruta a {
-    display: inline-block;
-    margin: 0 var(--espaciado-medio) var(--espaciado-medio);
-    color: var(--verde-montania);
-    font-weight: var(--peso-medio);
+.tarjeta-ruta .boton-primario {
+    width: 100%;
+    min-width: auto;
+    padding: var(--espaciado-pequenio) var(--espaciado-medio);
+    font-size: var(--tamano-texto);
 }
 
-.tarjeta-ruta a:hover {
-    color: var(--verde-montania-hover);
+/* Botones de navegación del carrusel */
+.boton-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--verde-montania);
+    color: var(--blanco-nieve);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transicion-rapida);
+    box-shadow: var(--sombra-media);
+}
+
+.boton-carrusel:hover {
+    background-color: var(--verde-montania-hover);
+}
+
+.boton-carrusel .material-icons {
+    font-size: 28px;
+}
+
+.boton-anterior {
+    left: 0;
+}
+
+.boton-siguiente {
+    right: 0;
+}
+
+/* Indicadores del carrusel */
+.indicadores-carrusel {
+    display: flex;
+    justify-content: center;
+    gap: var(--espaciado-pequenio);
+    margin-bottom: var(--espaciado-grande);
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gris-sombra);
+    cursor: pointer;
+    transition: var(--transicion-rapida);
+}
+
+.indicador.activo {
+    background-color: var(--verde-montania);
+    width: 24px;
+    border-radius: 5px;
 }
 
 /* ============================================
@@ -643,7 +761,8 @@ section h2 {
 
 .heroe-noticia {
     position: relative;
-    height: 300px;
+    width: 100%;
+    height: 400px;
     overflow: hidden;
 }
 
