@@ -46,6 +46,7 @@
     --verde-cerceta: #008071;
     --verde-montania: #36944B;
     --verde-claro: #91C24E;
+    --blanco-fondo: #dedede;
     
     /* Colores de texto */
     --negro-profundo: #161616;
@@ -62,8 +63,8 @@
     --fuente-texto: 'Roboto', sans-serif;
     
     /* Tamaños de fuente - Mobile First (<=768px) */
-    --tamano-h1: 2.25rem; /* 36px */
-    --tamano-h2: 1.75rem; /* 28px */
+    --tamano-h1: 2.75rem; /* 48px */
+    --tamano-h2: 2rem; /* 32px */
     --tamano-h3: 1.5rem; /* 24px */
     --tamano-h4: 1.25rem; /* 20px */
     --tamano-texto: 1rem; /* 16px */
@@ -209,7 +210,7 @@ header .logo {
 }
 
 header .logo img {
-    height: 2.2rem; /* 40px */
+    height: 2.25rem; /* 48px */
     width: auto;
 }
 
@@ -248,8 +249,8 @@ header .busqueda a {
 header .idioma img,
 header .busqueda img,
 header .menu-hamburguesa img {
-    height: 2.2rem; /* 24px - Ajusta para iconos más grandes/pequeños */
-    width: 2.2rem; /* 24px */
+    height: 2.25rem; /* 24px - Ajusta para iconos más grandes/pequeños */
+    width: 2.25rem; /* 24px */
 }
 
 /* Menú hamburguesa */
@@ -263,8 +264,8 @@ header .menu-hamburguesa img {
 }
 
 .menu-hamburguesa img {
-    height: 2.5rem; /* 40px */
-    width: 2.5rem; /* 40px */
+    height: 2.25rem;
+    width: 2.25rem; 
     transition: var(--transicion-rapida);
 }
 
@@ -339,6 +340,7 @@ nav a:focus {
 
 .heroe h1 {
     color: var(--blanco-nieve);
+    font-size: var(--tamano-h1);
     margin-bottom: var(--espaciado-medio);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
 }
@@ -362,7 +364,8 @@ nav a:focus {
    ============================================ */
 
 .boton-primario,
-.boton-secundario {
+.boton-secundario,
+.boton-terciario {
     display: inline-block;
     justify-content: center;
     padding: var(--espaciado-medio) var(--espaciado-grande);
@@ -393,11 +396,11 @@ nav a:focus {
     box-shadow: var(--sombra-media);
 }
 
-/* Botón secundario - Ligeramente más pequeño */
+/* Botón secundario - Ligeramente más pequeño. Usado con fondos tipo hero*/
 .boton-secundario {
-    background-color: var(--blanco-nieve);
-    color: var(--verde-montania);
-    border: var(--grosor-borde) solid var(--verde-montania);
+    background-color: var(--blanco-fondo);
+    color: var(--verde-bosque);
+    border: var(--grosor-borde) solid var(--verde-bosque);
     font-size: var(--tamano-boton-secundario);
     min-width: 11rem;
     padding: 0.875rem var(--espaciado-grande); /* 14px vertical */
@@ -405,12 +408,30 @@ nav a:focus {
 
 .boton-secundario:hover,
 .boton-secundario:focus {
-    background-color: var(--verde-montania-hover);
+    background-color: var(--verde-bosque-hover);
     color: var(--blanco-nieve);
     transform: translateY(-2px);
     box-shadow: var(--sombra-media);
-    border: var(--grosor-borde) solid var(--verde-montania-hover);
+    border: var(--grosor-borde) solid var(--verde-bosque-hover);
+}
 
+/* Boton terciario - Usado en VER más de rutas y noticias */
+.boton-terciario {
+    background-color: var(--blanco-nieve);
+    color: var(--verde-bosque);
+    border: var(--grosor-borde) solid var(--verde-bosque);
+    font-size: var(--tamano-boton-secundario);
+    min-width: 11rem;
+    padding: 0.875rem var(--espaciado-grande); /* 14px vertical */
+}
+
+.boton-terciario:hover,
+.boton-terciario:focus {
+    background-color: var(--verde-bosque-hover);
+    color: var(--blanco-nieve);
+    transform: translateY(-2px);
+    box-shadow: var(--sombra-media);
+    border: var(--grosor-borde) solid var(--verde-bosque-hover);
 }
 
 /* ============================================
@@ -427,7 +448,7 @@ section {
 
 section h2 {
     text-align: center;
-    margin-bottom: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-medio);
     color: var(--verde-bosque);
 }
 
@@ -437,10 +458,11 @@ section h2 {
 
 .noticias,
 .lista-noticias {
-    background-color: #ffffff;
+    background-color: var(--blanco-nieve);
     /* elementos centrados horizontalmente */
     display: grid;
     place-items: center;
+    padding: var(--espaciado-xlarge);
 }
 
 .cuadricula-noticias,
@@ -502,6 +524,7 @@ section h2 {
 
 .rutas {
     background-color: var(--blanco-nieve);
+    padding-bottom: var(--espaciado-xxlarge);
 }
 
 .contenedor-carrusel {
@@ -1116,20 +1139,20 @@ footer {
 
 .logos-sponsors {
     display: flex;
-    flex-direction: column;
-    gap: var(--espaciado-grande);
+    flex-direction: row;
+    gap: var(--espaciado-pequenio);
     align-items: center;
     justify-content: center;
 }
 
 .logo-sponsor {
-    
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     max-width: 18.75rem; /* 300px */
-    height: 3.5rem; /* 64px */
+    min-width: 6rem;
+    height: 3.5rem; /* 56px */
     transition: var(--transicion-rapida);
 }
 
