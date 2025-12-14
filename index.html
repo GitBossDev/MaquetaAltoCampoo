@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alto Campoo - Turismo Rural</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="css/styles.css">
     <!-- Favicon e iconos en moviles-->
     <link rel="icon" type="image/png" href="./assets/favicon/favicon-96x96.png" sizes="96x96" />
@@ -63,14 +62,17 @@
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
                     <img src="assets/img/noticia1index.png" alt="Noticia 1">
                     <h3>Inicio de nueva temporada de esquí</h3>
-                    <p>La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026.</p>
-                    <p>Leer más...</p>
+                    <p class="preview-noticia">La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026 y avanza con los proyectos iniciados este verano e incluidos en el plan de mejora y modernización de la instalación impulsado por la Consejería de Cultura, Turismo y Deporte a través de Cantur, la empresa pública encargada de su gestión.</p>
                 </article></a>
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
                     <img src="assets/img/noticia2index.png" alt="Noticia 2">
                     <h3>Nueva máquina pisapistas en Alto Campoo</h3>
-                    <p>El Consejero de Turismo visita Alto Campoo con motivo de la incorporación de una nueva máquina pisapistas, dotada con tecnología SNOWsat, que se suma a las cuatro máquinas ya existentes en la estación.</p>
-                    <p>Leer más...</p>
+                    <p class="preview-noticia">El principal objetivo de la inversión, 1,3 millones por las dos nuevas máquinas, es mejorar la calidad y el ritmo de preparación de pistas y dar mayor seguridad tanto a trabajadores como a los usuarios. La primera pisapistas ya funcionó en la temporada pasada.</p>
+                </article></a>
+                <a href="pages/noticia.html"><article class="tarjeta-noticia">
+                    <img src="assets/img/noticia3index.png" alt="Noticia 3">
+                    <h3>Alto Campoo acogerá la décima edición de La Herradura de Campoo</h3>
+                    <p class="preview-noticia">La Estación de Esquí y Montaña de Alto Campoo será el escenario, este sábado, de una edición muy especial de la prueba de Speed Trail la La Herradura de Campoo, que celebrará su décimo aniversario con la participación de más de 500 corredores. Esta emblemática carrera por montaña, que une naturaleza, historia y deporte en un entorno privilegiado, es ya una cita ineludible en el calendario anual y que cuenta con el apoyo de la Consejería de Cultura, Turismo y Deporte.</p>
                 </article></a>
             </div>
             <a href="pages/ultimas-novedades.html" class="boton-terciario">Ver Más Noticias</a>
@@ -80,7 +82,7 @@
             <h2>Rutas Destacadas</h2>
             <div class="contenedor-carrusel">
                 <button class="boton-carrusel boton-anterior" aria-label="Ruta anterior">
-                    <span class="material-icons">chevron_left</span>
+                    <img src="assets/icons/izquierdaicon.png" alt="Anterior">
                 </button>
                 <div class="carrusel-rutas">
                     <div class="tarjeta-ruta">
@@ -109,7 +111,7 @@
                     </div>
                 </div>
                 <button class="boton-carrusel boton-siguiente" aria-label="Ruta siguiente">
-                    <span class="material-icons">chevron_right</span>
+                    <img src="assets/icons/derechaicon.png" alt="Siguiente">
                 </button>
             </div>
             <div class="indicadores-carrusel">
@@ -138,28 +140,30 @@
             </div>
         </div>
         <div class="contenido-pie">
-            <div class="seccion-pie">
-                <h4>Enlaces</h4>
-                <ul>
-                    <li><a href="pages/quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="pages/mapa-rutas.html">Mapa de Rutas</a></li>
-                    <li><a href="pages/ultimas-novedades.html">Noticias</a></li>
-                    <li><a href="pages/contacto.html">Contacto</a></li>
-                </ul>
+            <div class="fila-superior-pie">
+                <div class="seccion-pie">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="pages/quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="pages/mapa-rutas.html">Mapa de Rutas</a></li>
+                        <li><a href="pages/ultimas-novedades.html">Noticias</a></li>
+                        <li><a href="pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="seccion-pie">
+                    <h4>Síguenos</h4>
+                    <div class="iconos-sociales">
+                        <a href="#" aria-label="Facebook"><img src="assets/icons/facebookicon.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="assets/icons/instagramicon.png" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="assets/icons/twittericon.png" alt="Twitter"></a>
+                    </div>
+                </div>
             </div>
-            <div class="seccion-pie">
+            <div class="seccion-pie seccion-contacto">
                 <h4>Contacto</h4>
-                <p><span class="material-icons">email</span> info@altocampoo.es</p>
-                <p><span class="material-icons">phone</span> +34 942 779 000</p>
-                <p><span class="material-icons">location_on</span> Alto Campoo, Cantabria</p>
-            </div>
-            <div class="seccion-pie">
-                <h4>Síguenos</h4>
-                <ul class="enlaces-sociales">
-                    <li><a href="#"><span class="material-icons">facebook</span> Facebook</a></li>
-                    <li><a href="#"><span class="material-icons">photo_camera</span> Instagram</a></li>
-                    <li><a href="#"><span class="material-icons">chat</span> Twitter</a></li>
-                </ul>
+                <p><img src="assets/icons/mailicon.png" alt="Email" class="icono-contacto"> info@altocampoo.es</p>
+                <p><img src="assets/icons/numeroicon.png" alt="Teléfono" class="icono-contacto"> +34 942 779 000</p>
+                <p><img src="assets/icons/ubicacionicon.png" alt="Ubicación" class="icono-contacto"> Alto Campoo, Cantabria</p>
             </div>
         </div>
         <div class="pie-inferior">
