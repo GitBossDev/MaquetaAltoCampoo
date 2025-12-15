@@ -24,10 +24,24 @@
             </div>
             <div class="grupo-iconos-derecha">
                 <div class="idioma">
-                    <a href=""><img src="assets/icons/translateicon.png" alt="Icono de idioma"></a>
+                    <button class="boton-idioma" aria-label="Cambiar idioma">
+                        <img src="assets/icons/translateicon.png" alt="Icono de idioma">
+                    </button>
+                    <div class="dropdown-idioma">
+                        <button class="opcion-idioma activo" data-lang="es">Español</button>
+                        <button class="opcion-idioma" data-lang="fr">Français</button>
+                        <button class="opcion-idioma" data-lang="en">English</button>
+                        <button class="opcion-idioma" data-lang="it">Italiano</button>
+                        <button class="opcion-idioma" data-lang="de">Deutsch</button>
+                    </div>
                 </div>
                 <div class="busqueda">
-                    <a href=""><img src="assets/icons/searchicon.png" alt="Icono de búsqueda"></a>
+                    <button class="boton-busqueda" aria-label="Buscar">
+                        <img src="assets/icons/searchicon.png" alt="Icono de búsqueda">
+                    </button>
+                    <div class="barra-busqueda-desplegable">
+                        <input type="search" placeholder="Buscar en Alto Campoo..." aria-label="Campo de búsqueda">
+                    </div>
                 </div>
                 <button class="menu-hamburguesa" aria-label="Abrir menú">
                     <img src="assets/icons/menuicon.png" alt="Icono de menú">
@@ -48,6 +62,7 @@
 
     <main>
         <section class="heroe">
+            <img src="assets/img/herophoto.jpg" alt="Alto Campoo" class="heroe-fondo">
             <h1>Alto Campoo todo el año</h1>
             <p>Explora nuestras rutas durante todas las estaciones</p>
             <div class="acciones-heroe">
@@ -62,7 +77,9 @@
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
                     <img src="assets/img/noticia1index.png" alt="Noticia 1">
                     <h3>Inicio de nueva temporada de esquí</h3>
-                    <p class="preview-noticia">La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026 y avanza con los proyectos iniciados este verano e incluidos en el plan de mejora y modernización de la instalación impulsado por la Consejería de Cultura, Turismo y Deporte a través de Cantur, la empresa pública encargada de su gestión.</p>
+                    <p class="preview-noticia">La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026 y avanza con los proyectos iniciados este verano e incluidos en el plan de mejora y modernización de la instalación impulsado por la Consejería de Cultura, Turismo y Deporte a través de Cantur, la empresa pública encargada de su gestión.
+                        Este texto no se ve en ningun lado, si es que lo llegas a ver es porque eres muy curioso. Y la curiosidad mató al gato. A mi me gustan los gatos, pero no los gatos curiosos.
+                    </p>
                 </article></a>
                 <a href="pages/noticia.html"><article class="tarjeta-noticia">
                     <img src="assets/img/noticia2index.png" alt="Noticia 2">
@@ -167,8 +184,7 @@
             </div>
         </div>
         <div class="pie-inferior">
-            <p>&copy; 2025 Alto Campoo. Todos los derechos reservados.</p>
-            <p><a href="pages/politica-privacidad.html">Política y Privacidad</a></p>
+            <p>&copy; 2025 Alto Campoo | <a href="pages/politica-privacidad.html">Política y Privacidad</a></p>
         </div>
     </footer>
 </body>

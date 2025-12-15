@@ -4,24 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiénes Somos - Alto Campoo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Favicon e iconos en moviles-->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Alto Campoo" />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <!-- Enlace a JS-->
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-            <img src="../assets/logo.png" alt="Logo Alto Campoo">
+        <div class="contenedor-header">
+            <div class="logo">
+                <a href="../index.html"><img src="../assets/icons/logotipoheader.png" alt="Logo Alto Campoo"></a>
+            </div>
+            <div class="grupo-iconos-derecha">
+                <div class="idioma">
+                    <button class="boton-idioma" aria-label="Cambiar idioma">
+                        <img src="../assets/icons/translateicon.png" alt="Icono de idioma">
+                    </button>
+                    <div class="dropdown-idioma">
+                        <button class="opcion-idioma activo" data-lang="es">Español</button>
+                        <button class="opcion-idioma" data-lang="fr">Français</button>
+                        <button class="opcion-idioma" data-lang="en">English</button>
+                        <button class="opcion-idioma" data-lang="it">Italiano</button>
+                        <button class="opcion-idioma" data-lang="de">Deutsch</button>
+                    </div>
+                </div>
+                <div class="busqueda">
+                    <button class="boton-busqueda" aria-label="Buscar">
+                        <img src="../assets/icons/searchicon.png" alt="Icono de búsqueda">
+                    </button>
+                    <div class="barra-busqueda-desplegable">
+                        <input type="search" placeholder="Buscar en Alto Campoo..." aria-label="Campo de búsqueda">
+                    </div>
+                </div>
+                <button class="menu-hamburguesa" aria-label="Abrir menú">
+                    <img src="../assets/icons/menuicon.png" alt="Icono de menú">
+                </button>
+            </div>
         </div>
-        <div class="barra-busqueda">
-            <span class="material-icons">search</span>
-            <input type="search" placeholder="Buscar...">
-        </div>
-        <button class="menu-hamburguesa" aria-label="Abrir menú">
-            <span class="material-icons">menu</span>
-        </button>
         <nav>
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
                 <li><a href="ultimas-novedades.html">Noticias</a></li>
@@ -34,6 +61,7 @@
 
     <main>
         <section class="heroe">
+            <img src="../assets/img/heroquienes.jpg" alt="Quiénes Somos" class="heroe-fondo">
             <h1>Quiénes Somos</h1>
             <p>Conoce la historia y el compromiso de Alto Campoo con el turismo rural sostenible</p>
         </section>
@@ -47,42 +75,52 @@
                 
                 <p>El equipo de Alto Campoo está formado por profesionales apasionados por la montaña, guías expertos y personas comprometidas con la excelencia en el servicio. Trabajamos cada día para mejorar nuestras instalaciones, rutas y servicios, siempre escuchando las necesidades de nuestros visitantes.</p>
                 
-                <p>Contamos con una amplia red de senderos señalizados, miradores naturales y puntos de interés que permiten a los visitantes explorar la región de manera segura y enriquecedora. Además, colaboramos estrechamente con asociaciones medioambientales y entidades locales para garantizar la preservación de este entorno único.</p>
             </div>
             <div class="imagen-contenido">
-                <img src="../assets/quienes-somos/equipo.jpg" alt="Equipo Alto Campoo">
+                <img src="../assets/img/equipo.jpeg" alt="Equipo Alto Campoo">
             </div>
         </section>
     </main>
 
     <footer>
+        <div class="seccion-sponsors">
+            <div class="logos-sponsors">
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor1.webp" alt="Sponsor 1">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor2.png" alt="Sponsor 2">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor3.png" alt="Sponsor 3">
+                </div>
+            </div>
+        </div>
         <div class="contenido-pie">
-            <div class="seccion-pie">
-                <h4>Alto Campoo Turismo</h4>
-                <p>Descubre la belleza natural de nuestras montañas</p>
+            <div class="fila-superior-pie">
+                <div class="seccion-pie">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
+                        <li><a href="ultimas-novedades.html">Noticias</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="seccion-pie">
+                    <h4>Síguenos</h4>
+                    <div class="iconos-sociales">
+                        <a href="#" aria-label="Facebook"><img src="../assets/icons/facebookicon.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="../assets/icons/instagramicon.png" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="../assets/icons/twittericon.png" alt="Twitter"></a>
+                    </div>
+                </div>
             </div>
-            <div class="seccion-pie">
-                <h4>Enlaces</h4>
-                <ul>
-                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
-                    <li><a href="ultimas-novedades.html">Noticias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="seccion-pie">
+            <div class="seccion-pie seccion-contacto">
                 <h4>Contacto</h4>
-                <p><span class="material-icons">email</span> info@altocampoo.es</p>
-                <p><span class="material-icons">phone</span> +34 942 779 000</p>
-                <p><span class="material-icons">location_on</span> Alto Campoo, Cantabria</p>
-            </div>
-            <div class="seccion-pie">
-                <h4>Síguenos</h4>
-                <ul class="enlaces-sociales">
-                    <li><a href="#"><span class="material-icons">facebook</span> Facebook</a></li>
-                    <li><a href="#"><span class="material-icons">photo_camera</span> Instagram</a></li>
-                    <li><a href="#"><span class="material-icons">chat</span> Twitter</a></li>
-                </ul>
+                <p><img src="../assets/icons/mailicon.png" alt="Email" class="icono-contacto"> info@altocampoo.es</p>
+                <p><img src="../assets/icons/numeroicon.png" alt="Teléfono" class="icono-contacto"> +34 942 779 000</p>
+                <p><img src="../assets/icons/ubicacionicon.png" alt="Ubicación" class="icono-contacto"> Alto Campoo, Cantabria</p>
             </div>
         </div>
         <div class="pie-inferior">
@@ -90,7 +128,5 @@
             <p><a href="politica-privacidad.html">Política y Privacidad</a></p>
         </div>
     </footer>
-
-    <script src="../js/main.js"></script>
 </body>
 </html>

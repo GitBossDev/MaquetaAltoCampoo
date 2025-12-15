@@ -4,8 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apertura de nueva ruta invernal - Alto Campoo</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../css/styles.css">
+    <!-- Favicon e iconos en moviles-->
+    <link rel="icon" type="image/png" href="../assets/favicon/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon/favicon.svg" />
+    <link rel="shortcut icon" href="../assets/favicon/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-title" content="Alto Campoo" />
+    <meta name="apple-mobile-web-app-title" content="Alto Campoo" />
+    <link rel="manifest" href="../assets/favicon/site.webmanifest" />
+    <!-- Enlace a JS-->
+    <script src="../js/main.js" defer></script>
 </head>
 <body>
     <header>
@@ -13,19 +22,34 @@
             <div class="logo">
                 <a href="../index.html"><img src="../assets/icons/logotipoheader.png" alt="Logo Alto Campoo"></a>
             </div>
-            <div class="idioma">
-                <a href=""><img src="../assets/icons/translateicon.png" alt="Icono de idioma"></a>
+            <div class="grupo-iconos-derecha">
+                <div class="idioma">
+                    <button class="boton-idioma" aria-label="Cambiar idioma">
+                        <img src="../assets/icons/translateicon.png" alt="Icono de idioma">
+                    </button>
+                    <div class="dropdown-idioma">
+                        <button class="opcion-idioma activo" data-lang="es">Español</button>
+                        <button class="opcion-idioma" data-lang="fr">Français</button>
+                        <button class="opcion-idioma" data-lang="en">English</button>
+                        <button class="opcion-idioma" data-lang="it">Italiano</button>
+                        <button class="opcion-idioma" data-lang="de">Deutsch</button>
+                    </div>
+                </div>
+                <div class="busqueda">
+                    <button class="boton-busqueda" aria-label="Buscar">
+                        <img src="../assets/icons/searchicon.png" alt="Icono de búsqueda">
+                    </button>
+                    <div class="barra-busqueda-desplegable">
+                        <input type="search" placeholder="Buscar en Alto Campoo..." aria-label="Campo de búsqueda">
+                    </div>
+                </div>
+                <button class="menu-hamburguesa" aria-label="Abrir menú">
+                    <img src="../assets/icons/menuicon.png" alt="Icono de menú">
+                </button>
             </div>
-            <div class="busqueda">
-                <a href=""><img src="../assets/icons/searchicon.png" alt="Icono de búsqueda"></a>
-            </div>
-            <button class="menu-hamburguesa" aria-label="Abrir menú">
-                <span class="material-icons">menu</span>
-            </button>
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="quienes-somos.html">Quiénes Somos</a></li>
                 <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
                 <li><a href="ultimas-novedades.html">Noticias</a></li>
@@ -38,37 +62,30 @@
 
     <main>
         <section class="heroe-noticia">
-            <img src="../assets/noticias/noticia-hero.jpg" alt="Apertura de nueva ruta invernal">
-            <h1>Apertura de nueva ruta invernal</h1>
+            <img src="../assets/img/noticia1index.png" alt="Inicio de nueva temporada de esquí">
+            <h1>Inicio de nueva temporada de esquí</h1>
         </section>
 
         <article class="detalle-noticia">
             <section class="metadatos-noticia">
                 <p class="noticia-fecha">28 de noviembre, 2025</p>
                 <div class="noticia-tags">
-                    <span class="tag">Rutas</span>
-                    <span class="tag">Invierno</span>
-                    <span class="tag">Senderismo</span>
-                    <span class="tag">Naturaleza</span>
+                    <span class="tag">Esquí</span>
+                    <span class="tag">Temporada</span>
+                    <span class="tag">Infraestructura</span>
                 </div>
             </section>
 
             <section class="contenido-noticia">
-                <p>Alto Campoo se complace en anunciar la apertura de un nuevo sendero especialmente acondicionado para la temporada invernal. Esta iniciativa responde a la creciente demanda de los visitantes que desean disfrutar de la belleza de nuestras montañas durante los meses más fríos del año.</p>
+                <p>La Estación de Esquí y Montaña Alto Campoo intensifica durante estas semanas los preparativos de cara al inicio de la temporada 2025-2026 y avanza con los proyectos iniciados este verano e incluidos en el plan de mejora y modernización de la instalación impulsado por la Consejería de Cultura, Turismo y Deporte a través de Cantur, la empresa pública encargada de su gestión.</p>
 
-                <p>El nuevo sendero invernal ha sido diseñado con los más altos estándares de seguridad, incorporando señalización reforzada y puntos de refugio estratégicamente ubicados a lo largo del recorrido. Con una longitud de 6.5 kilómetros, la ruta ofrece vistas espectaculares del valle nevado y permite a los excursionistas experimentar la tranquilidad única de la montaña en invierno.</p>
+                <p>Las obras de mejora han centrado sus esfuerzos en la renovación de las infraestructuras esenciales para garantizar una temporada segura y cómoda para todos los visitantes. Entre las actuaciones destacadas se encuentra la modernización del sistema de innivación artificial, que permitirá ampliar el período de disfrute de las pistas incluso en condiciones meteorológicas adversas.</p>
 
-                <div class="imagen-noticia">
-                    <img src="../assets/noticias/noticia-contenido.jpg" alt="Vista del sendero invernal">
-                </div>
+                <p>La renovación de las zonas comunes también ha sido una prioridad este verano. Las cafeterías y restaurantes de la estación han sido remozados, ofreciendo espacios más amplios y confortables donde los esquiadores podrán reponer fuerzas y disfrutar de la gastronomía local. Los vestuarios y taquillas también se han actualizado para ofrecer mayor comodidad a los visitantes.</p>
 
-                <p>Durante el desarrollo del proyecto, se ha trabajado en estrecha colaboración con expertos en seguridad de montaña y guías locales para garantizar que el sendero sea accesible para personas con diferentes niveles de experiencia. Se han instalado barandillas en las zonas más expuestas y se han habilitado áreas de descanso con información detallada sobre las condiciones meteorológicas y recomendaciones de seguridad.</p>
+                <p>El equipo de monitores y el personal de pistas ya se encuentra en fase de formación y actualización de protocolos de seguridad. Se han incorporado nuevos profesionales especializados en rescate en montaña y primeros auxilios, reforzando así la capacidad de respuesta ante cualquier eventualidad.</p>
 
-                <p>La nueva ruta se suma a la red existente de senderos de Alto Campoo y estará operativa desde el próximo 1 de diciembre hasta el 31 de marzo. Se recomienda a los visitantes equiparse adecuadamente con ropa de abrigo, calzado impermeable con buen agarre y llevar siempre agua y provisiones suficientes.</p>
-
-                <p>Además, se ofrecerán visitas guiadas todos los fines de semana durante la temporada invernal, permitiendo a los participantes conocer de cerca la flora y fauna adaptada a las condiciones invernales, así como aprender técnicas básicas de orientación y seguridad en montaña.</p>
-
-                <p>Para más información sobre horarios, condiciones de acceso y reservas para las visitas guiadas, los interesados pueden contactar con nuestro centro de visitantes o consultar nuestra página web.</p>
+                <p>La previsión de apertura está fijada para principios de diciembre, aunque dependerá de las condiciones meteorológicas y del manto nivoso. Los abonos de temporada ya están disponibles con importantes descuentos para los que adquieran sus forfaits con antelación. Para más información sobre tarifas, horarios y condiciones de nieve, los interesados pueden consultar la página web oficial o contactar directamente con la oficina de información de la estación.</p>
             </section>
 
             <section class="adjuntos">
@@ -77,7 +94,7 @@
                     <li>
                         <a href="#" download>
                             <span class="icono-adjunto">PDF</span>
-                            <span class="nombre-adjunto">Mapa de la ruta invernal</span>
+                            <span class="nombre-adjunto">Cronograma de temporada</span>
                         </a>
                     </li>
                     <li>
@@ -92,33 +109,44 @@
     </main>
 
     <footer>
+        <div class="seccion-sponsors">
+            <div class="logos-sponsors">
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor1.webp" alt="Sponsor 1">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor2.png" alt="Sponsor 2">
+                </div>
+                <div class="logo-sponsor">
+                    <img src="../assets/icons/sponsor3.png" alt="Sponsor 3">
+                </div>
+            </div>
+        </div>
         <div class="contenido-pie">
-            <div class="seccion-pie">
-                <h4>Alto Campoo Turismo</h4>
-                <p>Descubre la belleza natural de nuestras montañas</p>
+            <div class="fila-superior-pie">
+                <div class="seccion-pie">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="quienes-somos.html">Quiénes Somos</a></li>
+                        <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
+                        <li><a href="ultimas-novedades.html">Noticias</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="seccion-pie">
+                    <h4>Síguenos</h4>
+                    <div class="iconos-sociales">
+                        <a href="#" aria-label="Facebook"><img src="../assets/icons/facebookicon.png" alt="Facebook"></a>
+                        <a href="#" aria-label="Instagram"><img src="../assets/icons/instagramicon.png" alt="Instagram"></a>
+                        <a href="#" aria-label="Twitter"><img src="../assets/icons/twittericon.png" alt="Twitter"></a>
+                    </div>
+                </div>
             </div>
-            <div class="seccion-pie">
-                <h4>Enlaces</h4>
-                <ul>
-                    <li><a href="quienes-somos.html">Quiénes Somos</a></li>
-                    <li><a href="mapa-rutas.html">Mapa de Rutas</a></li>
-                    <li><a href="ultimas-novedades.html">Noticias</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
-            </div>
-            <div class="seccion-pie">
+            <div class="seccion-pie seccion-contacto">
                 <h4>Contacto</h4>
-                <p><span class="material-icons">email</span> info@altocampoo.es</p>
-                <p><span class="material-icons">phone</span> +34 942 779 000</p>
-                <p><span class="material-icons">location_on</span> Alto Campoo, Cantabria</p>
-            </div>
-            <div class="seccion-pie">
-                <h4>Síguenos</h4>
-                <ul class="enlaces-sociales">
-                    <li><a href="#"><span class="material-icons">facebook</span> Facebook</a></li>
-                    <li><a href="#"><span class="material-icons">photo_camera</span> Instagram</a></li>
-                    <li><a href="#"><span class="material-icons">chat</span> Twitter</a></li>
-                </ul>
+                <p><img src="../assets/icons/mailicon.png" alt="Email" class="icono-contacto"> info@altocampoo.es</p>
+                <p><img src="../assets/icons/numeroicon.png" alt="Teléfono" class="icono-contacto"> +34 942 779 000</p>
+                <p><img src="../assets/icons/ubicacionicon.png" alt="Ubicación" class="icono-contacto"> Alto Campoo, Cantabria</p>
             </div>
         </div>
         <div class="pie-inferior">
@@ -126,8 +154,5 @@
             <p><a href="politica-privacidad.html">Política y Privacidad</a></p>
         </div>
     </footer>
-
-    <script src="../js/main.js"></script>
-    <script src="../js/main.js"></script>
 </body>
 </html>
