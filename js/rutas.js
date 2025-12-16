@@ -172,17 +172,50 @@ function inicializarMapa() {
     // Coordenadas de Alto Campoo
     const altoCampoo = [43.036630, -4.386733];
 
+    // Determinar zoom inicial según ancho de pantalla
+    let zoomInicial = 14;
+    if (window.innerWidth >= 1024) {
+        zoomInicial = 13; // Desktop - más zoom out para ver más área
+    } else if (window.innerWidth >= 768) {
+        zoomInicial = 13; // Tablet
+    } else {
+        zoomInicial = 13; // Móvil
+    }
+
     // Crear el mapa
-    mapa = L.map('mapa-rutas').setView(altoCampoo, 14);
+    mapa = L.map('mapa-rutas').setView(altoCampoo, zoomInicial);
 
     // Añadir capa de OpenStreetMap
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        maxZoom: 18
+        maxZoom: 18,
+        minZoom: 10
     }).addTo(mapa);
 
     // Mostrar todas las rutas
     mostrarRutas(rutasData);
+    
+    // Ajustar mapa cuando cambia el tamaño de ventana
+    window.addEventListener('resize', () => {
+        mapa.invalidateSize();
+        ajustarVistaAlContenido();
+    });
+    
+    // Ajustar vista inicial para mostrar todas las rutas
+    setTimeout(() => {
+        ajustarVistaAlContenido();
+    }, 100);
+}
+
+// Ajustar automáticamente el zoom para mostrar todas las rutas
+function ajustarVistaAlContenido() {
+    if (marcadores.length > 0) {
+        const grupo = L.featureGroup(marcadores);
+        mapa.fitBounds(grupo.getBounds(), {
+            padding: [50, 50],
+            maxZoom: 14
+        });
+    }
 }
 
 // ============================================
@@ -255,6 +288,11 @@ function aplicarFiltrosDesdeFormulario() {
 
     // Mostrar rutas filtradas
     mostrarRutas(rutasFiltradas);
+    
+    // Ajustar vista después de filtrar
+    setTimeout(() => {
+        ajustarVistaAlContenido();
+    }, 100);
 }
 
 function limpiarFiltros() {

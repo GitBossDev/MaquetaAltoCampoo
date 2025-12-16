@@ -1,75 +1,133 @@
 // ============================================
-// MENÚ HAMBURGUESA
+// MENÚ HAMBURGUESA - ENFOQUE CSS-FIRST
 // ============================================
 
-const menuHamburguesa = document.querySelector('.menu-hamburguesa');
-const nav = document.querySelector('nav');
-
-if (menuHamburguesa && nav) {
+(function() {
+    const menuHamburguesa = document.querySelector('.menu-hamburguesa');
+    if (!menuHamburguesa) return;
+    
+    const icono = menuHamburguesa.querySelector('img');
+    const rutaBase = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
+    
+    // Toggle del menú
     menuHamburguesa.addEventListener('click', () => {
-        nav.classList.toggle('activo');
+        const estaAbierto = document.body.classList.toggle('menu-abierto');
         
-        // Cerrar dropdown de idioma y búsqueda si están abiertos
-        const dropdownIdioma = document.querySelector('.dropdown-idioma');
-        const barraBusqueda = document.querySelector('.barra-busqueda-desplegable');
-        if (dropdownIdioma) dropdownIdioma.classList.remove('activo');
-        if (barraBusqueda) barraBusqueda.classList.remove('activo');
-        
-        // Cambiar imagen del menú y aplicar clase activo solo al icono
-        const icono = menuHamburguesa.querySelector('img');
-        icono.classList.toggle('activo');
-        
-        // Detectar si estamos en la raíz o en una subcarpeta
-        const rutaBase = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
-        
-        if (nav.classList.contains('activo')) {
-            icono.src = rutaBase + 'xmenuicon.png';
-            icono.alt = 'Cerrar menú';
-        } else {
-            icono.src = rutaBase + 'menuicon.png';
-            icono.alt = 'Icono de menú';
+        // Cambiar icono
+        if (icono) {
+            if (estaAbierto) {
+                icono.src = rutaBase + 'xmenuicon.png';
+                icono.alt = 'Cerrar menú';
+            } else {
+                icono.src = rutaBase + 'menuicon.png';
+                icono.alt = 'Abrir menú';
+            }
         }
+        
+        // Cerrar otros dropdowns
+        document.querySelector('.dropdown-idioma')?.classList.remove('activo');
+        document.querySelector('.barra-busqueda-desplegable')?.classList.remove('activo');
     });
-
-    // Cerrar el menú al hacer click en un enlace
-    const enlacesNav = document.querySelectorAll('nav a');
-    enlacesNav.forEach(enlace => {
+    
+    // Cerrar menú al hacer click en un enlace
+    document.querySelectorAll('nav a').forEach(enlace => {
         enlace.addEventListener('click', () => {
-            nav.classList.remove('activo');
-            
-            const icono = menuHamburguesa.querySelector('img');
-            icono.classList.remove('activo');
-            const rutaBase = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
-            icono.src = rutaBase + 'menuicon.png';
-            icono.alt = 'Icono de menú';
+            document.body.classList.remove('menu-abierto');
+            if (icono) {
+                icono.src = rutaBase + 'menuicon.png';
+                icono.alt = 'Abrir menú';
+            }
         });
     });
-}
+    
+    // Cerrar menú al hacer click fuera
+    document.addEventListener('click', (e) => {
+        if (!menuHamburguesa.contains(e.target) && !document.querySelector('nav')?.contains(e.target)) {
+            if (document.body.classList.contains('menu-abierto')) {
+                document.body.classList.remove('menu-abierto');
+                if (icono) {
+                    icono.src = rutaBase + 'menuicon.png';
+                    icono.alt = 'Abrir menú';
+                }
+            }
+        }
+    });
+    
+    // Cerrar menú al redimensionar a desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 1024) {
+            document.body.classList.remove('menu-abierto');
+            if (icono) {
+                icono.src = rutaBase + 'menuicon.png';
+                icono.alt = 'Abrir menú';
+            }
+        }
+    });
+})();
 
 // ============================================
-// CARRUSEL DE RUTAS
+// CARRUSEL DE RUTAS - INFINITO CON CLONES
 // ============================================
 
 const carrusel = document.querySelector('.carrusel-rutas');
 const botonAnterior = document.querySelector('.boton-anterior');
 const botonSiguiente = document.querySelector('.boton-siguiente');
 const indicadores = document.querySelectorAll('.indicador');
-const tarjetas = document.querySelectorAll('.tarjeta-ruta');
 
-if (carrusel && botonAnterior && botonSiguiente) {
+if (carrusel && botonAnterior && botonSiguiente && indicadores.length > 0) {
+    // Obtener tarjetas originales
+    const tarjetasOriginales = Array.from(document.querySelectorAll('.tarjeta-ruta'));
+    const numTarjetasOriginales = tarjetasOriginales.length;
+    
+    // Clonar tarjetas al inicio y al final para efecto infinito
+    tarjetasOriginales.forEach(tarjeta => {
+        const cloneInicio = tarjeta.cloneNode(true);
+        const cloneFinal = tarjeta.cloneNode(true);
+        carrusel.insertBefore(cloneInicio, carrusel.firstChild);
+        carrusel.appendChild(cloneFinal);
+    });
+    
+    // Actualizar la lista de todas las tarjetas (incluyendo clones)
+    const todasLasTarjetas = Array.from(document.querySelectorAll('.tarjeta-ruta'));
+    
     let indiceActual = 0;
+    let scrollTimeout = null;
+    let estaTransicionando = false;
 
-    // Función para actualizar la posición del carrusel
-    function actualizarCarrusel() {
-        const anchoTarjeta = tarjetas[0].offsetWidth;
-        const gap = 16; // var(--espaciado-medio)
-        const desplazamiento = (anchoTarjeta + gap) * indiceActual;
-        carrusel.scrollTo({
-            left: desplazamiento,
-            behavior: 'smooth'
-        });
+    // Función para obtener el gap entre tarjetas
+    function obtenerGap() {
+        const estilo = window.getComputedStyle(carrusel);
+        return parseFloat(estilo.gap) || 0;
+    }
+
+    // Función para centrar tarjeta por índice real (con clones)
+    function centrarTarjetaPorIndiceReal(indiceReal, conAnimacion = true) {
+        const tarjeta = todasLasTarjetas[indiceReal];
+        const anchoCarrusel = carrusel.offsetWidth;
+        const posicionTarjeta = tarjeta.offsetLeft;
+        const anchoTarjeta = tarjeta.offsetWidth;
         
-        // Actualizar indicadores
+        const scrollACentro = posicionTarjeta - (anchoCarrusel / 2) + (anchoTarjeta / 2);
+        
+        if (conAnimacion) {
+            carrusel.scrollTo({
+                left: scrollACentro,
+                behavior: 'smooth'
+            });
+        } else {
+            carrusel.scrollLeft = scrollACentro;
+        }
+    }
+
+    // Función para centrar tarjeta y actualizar indicadores
+    function centrarTarjeta() {
+        const indiceReal = numTarjetasOriginales + indiceActual;
+        centrarTarjetaPorIndiceReal(indiceReal, true);
+        actualizarIndicadores();
+    }
+
+    // Función para actualizar indicadores
+    function actualizarIndicadores() {
         indicadores.forEach((indicador, indice) => {
             if (indice === indiceActual) {
                 indicador.classList.add('activo');
@@ -79,49 +137,108 @@ if (carrusel && botonAnterior && botonSiguiente) {
         });
     }
 
-    // Botón anterior
-    botonAnterior.addEventListener('click', () => {
-        if (indiceActual > 0) {
-            indiceActual--;
-            actualizarCarrusel();
+    // Función para manejar el salto infinito
+    function manejarSaltoInfinito() {
+        if (estaTransicionando) return;
+        
+        const anchoCarrusel = carrusel.offsetWidth;
+        const scrollLeft = carrusel.scrollLeft;
+        const centro = scrollLeft + (anchoCarrusel / 2);
+        
+        // Encontrar la tarjeta más cercana al centro
+        let distanciaMinima = Infinity;
+        let indiceRealCercano = 0;
+        
+        todasLasTarjetas.forEach((tarjeta, indice) => {
+            const posicionTarjeta = tarjeta.offsetLeft;
+            const anchoTarjeta = tarjeta.offsetWidth;
+            const centroTarjeta = posicionTarjeta + (anchoTarjeta / 2);
+            const distancia = Math.abs(centro - centroTarjeta);
+            
+            if (distancia < distanciaMinima) {
+                distanciaMinima = distancia;
+                indiceRealCercano = indice;
+            }
+        });
+        
+        // Verificar si estamos en los clones del inicio
+        if (indiceRealCercano < numTarjetasOriginales) {
+            estaTransicionando = true;
+            const indiceCorrespondiente = indiceRealCercano + numTarjetasOriginales;
+            indiceActual = indiceRealCercano;
+            setTimeout(() => {
+                centrarTarjetaPorIndiceReal(indiceCorrespondiente, false);
+                estaTransicionando = false;
+            }, 300);
         }
+        // Verificar si estamos en los clones del final
+        else if (indiceRealCercano >= numTarjetasOriginales * 2) {
+            estaTransicionando = true;
+            const indiceCorrespondiente = indiceRealCercano - numTarjetasOriginales;
+            indiceActual = indiceRealCercano - (numTarjetasOriginales * 2);
+            setTimeout(() => {
+                centrarTarjetaPorIndiceReal(indiceCorrespondiente, false);
+                estaTransicionando = false;
+            }, 300);
+        }
+        // Estamos en las tarjetas originales
+        else {
+            indiceActual = indiceRealCercano - numTarjetasOriginales;
+        }
+        
+        actualizarIndicadores();
+    }
+
+    // Botón anterior
+    botonAnterior.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (estaTransicionando) return;
+        
+        indiceActual = indiceActual > 0 ? indiceActual - 1 : numTarjetasOriginales - 1;
+        centrarTarjeta();
     });
 
     // Botón siguiente
-    botonSiguiente.addEventListener('click', () => {
-        if (indiceActual < tarjetas.length - 1) {
-            indiceActual++;
-            actualizarCarrusel();
-        }
+    botonSiguiente.addEventListener('click', (e) => {
+        e.preventDefault();
+        if (estaTransicionando) return;
+        
+        indiceActual = indiceActual < numTarjetasOriginales - 1 ? indiceActual + 1 : 0;
+        centrarTarjeta();
     });
 
     // Click en indicadores
     indicadores.forEach((indicador, indice) => {
         indicador.addEventListener('click', () => {
+            if (estaTransicionando) return;
             indiceActual = indice;
-            actualizarCarrusel();
+            centrarTarjeta();
         });
     });
 
     // Detectar scroll manual
     carrusel.addEventListener('scroll', () => {
-        const anchoTarjeta = tarjetas[0].offsetWidth;
-        const gap = 16;
-        const scrollLeft = carrusel.scrollLeft;
-        const nuevoIndice = Math.round(scrollLeft / (anchoTarjeta + gap));
-        
-        if (nuevoIndice !== indiceActual && nuevoIndice >= 0 && nuevoIndice < tarjetas.length) {
-            indiceActual = nuevoIndice;
-            // Actualizar solo indicadores, no hacer scroll
-            indicadores.forEach((indicador, indice) => {
-                if (indice === indiceActual) {
-                    indicador.classList.add('activo');
-                } else {
-                    indicador.classList.remove('activo');
-                }
-            });
-        }
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            manejarSaltoInfinito();
+        }, 150);
     });
+
+    // Recalcular en resize
+    window.addEventListener('resize', () => {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            const indiceReal = numTarjetasOriginales + indiceActual;
+            centrarTarjetaPorIndiceReal(indiceReal, false);
+        }, 200);
+    });
+
+    // Inicializar: posicionar en la primera tarjeta original (sin animación)
+    setTimeout(() => {
+        const indiceReal = numTarjetasOriginales;
+        centrarTarjetaPorIndiceReal(indiceReal, false);
+        actualizarIndicadores();
+    }, 100);
 }
 
 // ============================================
