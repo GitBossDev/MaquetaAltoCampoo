@@ -19,7 +19,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 p.classList.remove('activo');
                 p.setAttribute('aria-expanded', 'false');
                 r.classList.remove('activa');
-                i.textContent = '+';
+                i.src = '../assets/icons/sumaicon.png';
+                i.alt = 'Expandir';
             });
             
             // Si la pregunta clickeada no estaba activa, abrirla
@@ -27,7 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 pregunta.classList.add('activo');
                 pregunta.setAttribute('aria-expanded', 'true');
                 respuesta.classList.add('activa');
-                icono.textContent = '−';
+                icono.src = '../assets/icons/abajoicon.png';
+                icono.alt = 'Contraer';
             }
         });
     });

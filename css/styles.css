@@ -877,7 +877,8 @@ section h2 {
    ============================================ */
 
 .contenido {
-    background-color: #ffffff;
+    background-color: var(--blanco-nieve);
+    padding: var(--espaciado-medio) var(--espaciado-grande);
 }
 
 .texto-contenido {
@@ -885,7 +886,7 @@ section h2 {
 }
 
 .texto-contenido h3 {
-    color: var(--verde-montania);
+    color: var(--verde-bosque);
     margin-top: var(--espaciado-grande);
     margin-bottom: var(--espaciado-medio);
 }
@@ -975,6 +976,11 @@ section h2 {
     width: 100%;
     height: 500px;
     border-radius: var(--radio-borde);
+}
+
+/* Controles de Leaflet (zoom) debajo del header */
+.leaflet-control-container {
+    z-index: 500 !important;
 }
 
 /* Estilos para marcadores del mapa */
@@ -1234,7 +1240,7 @@ section h2 {
 }
 
 .icono-adjunto {
-    background-color: var(--verde-montania);
+    background-color: var(--verde-bosque);
     color: var(--blanco-nieve);
     padding: var(--espaciado-pequenio) var(--espaciado-medio);
     border-radius: var(--radio-borde-pequenio);
@@ -1252,23 +1258,21 @@ section h2 {
    ============================================ */
 
 .seccion-faq {
-    background-color: #ffffff;
-    margin-bottom: var(--espaciado-grande);
+    background-color: var(--blanco-nieve);
+    
 }
 
-.seccion-faq h2 {
+.seccion-faq h3 {
+    padding: var(--espaciado-pequenio);
     color: var(--verde-bosque);
-    text-align: left;
-    padding: var(--espaciado-medio);
-    background-color: var(--verde-claro);
-    border-radius: var(--radio-borde);
+
 }
 
 .lista-faq {
     display: flex;
     flex-direction: column;
     gap: var(--espaciado-medio);
-    margin-top: var(--espaciado-grande);
+    padding: var(--espaciado-pequenio);
 }
 
 .elemento-faq {
@@ -1284,24 +1288,25 @@ section h2 {
     justify-content: space-between;
     align-items: center;
     padding: var(--espaciado-medio);
-    background-color: #ffffff;
-    color: var(--verde-bosque);
+    background-color: var(--verde-bosque);
+    color: var(--blanco-nieve);
     font-weight: var(--peso-medio);
+    font-size: var(--tamano-texto);
     text-align: left;
     transition: var(--transicion-rapida);
 }
 
 .pregunta-faq:hover {
-    background-color: var(--blanco-nieve);
+    background-color: var(--verde-bosque-hover);
 }
 
 .pregunta-faq.activo {
-    background-color: var(--verde-claro);
-    color: var(--blanco-nieve);
+    background-color: var(--blanco-nieve);
+    color: var(--verde-bosque);
 }
 
 .pregunta-faq.activo .icono-faq {
-    color: var(--blanco-nieve);
+    filter: brightness(0) saturate(100%) invert(18%) sepia(48%) saturate(1789%) hue-rotate(145deg) brightness(95%) contrast(101%);
 }
 
 .pregunta-faq span:first-child {
@@ -1310,14 +1315,14 @@ section h2 {
 }
 
 .icono-faq {
-    color: var(--verde-montania);
-    font-size: var(--tamano-h3);
-    font-weight: var(--peso-negrita);
+    width: 1.5rem;
+    height: 1.5rem;
     transition: var(--transicion-media);
+    flex-shrink: 0;
 }
 
 .pregunta-faq[aria-expanded="true"] .icono-faq {
-    transform: rotate(45deg);
+    transform: none;
 }
 
 .respuesta-faq {
