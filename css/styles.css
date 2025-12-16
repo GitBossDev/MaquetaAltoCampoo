@@ -901,10 +901,14 @@ section h2 {
 
 .imagen-contenido {
     margin-top: var(--espaciado-grande);
+    max-width: 600px; /* Tamaño máximo de la imagen - AJUSTAR AQUÍ */
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .imagen-contenido img {
     width: 100%;
+    height: auto;
     border-radius: var(--radio-borde);
     box-shadow: var(--sombra-suave);
 }
@@ -1441,7 +1445,7 @@ section h2 {
 }
 
 .formulario-contacto {
-    background-color: #ffffff;
+    background-color: var(--blanco-nieve);
     padding: var(--espaciado-grande) var(--espaciado-medio);
 }
 
@@ -1867,6 +1871,11 @@ footer {
         grid-template-columns: repeat(2, 1fr);
     }
     
+    /* Imagen de contenido más grande en tablet */
+    .imagen-contenido {
+        max-width: 700px; /* Tamaño máximo en tablet*/
+    }
+    
     /* FAQ - Más ancho */
     .contenedor-faq {
         max-width: 700px;
@@ -1945,7 +1954,7 @@ footer {
         flex-direction: row !important;
         justify-content: center;
         align-items: center;
-        gap: var(--espaciado-medio);
+        gap: var(--espaciado-pequenio);
         flex-wrap: nowrap;
         margin: 0;
     }
@@ -1956,7 +1965,7 @@ footer {
     
     nav li a {
         display: block;
-        padding: var(--espaciado-pequenio) var(--espaciado-medio);
+        padding: var(--espaciado-pequenio) var(--espaciado-pequenio);
         font-size: 1rem;
         font-weight: var(--peso-medio);
         border-radius: var(--radio-borde-pequenio);
@@ -2147,7 +2156,7 @@ footer {
     .contenido-pie {
         max-width: 1200px;
         margin: 0 auto;
-        padding: var(--espaciado-xxlarge) var(--espaciado-grande);
+        padding: var(--espaciado-grande) var(--espaciado-grande);
         display: grid;
         grid-template-columns: repeat(3, minmax(200px, 350px));
         gap: var(--espaciado-xlarge);
@@ -2277,6 +2286,11 @@ footer {
     
     .tarjeta-valor:hover {
         transform: translateY(-8px);
+    }
+    
+    /* Imagen de contenido en desktop */
+    .imagen-contenido {
+        max-width: 800px; /* Tamaño máximo en desktop - AJUSTAR AQUÍ */
     }
     
     .seccion-equipo {
