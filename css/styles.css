@@ -1238,7 +1238,7 @@ section h2 {
 }
 
 .detalle-noticia {
-    background-color: #ffffff;
+    background-color: var(--blanco-nieve);
 }
 
 .metadatos-noticia {
