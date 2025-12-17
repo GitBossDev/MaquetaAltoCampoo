@@ -10,7 +10,8 @@
     const rutaBase = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
     
     // Toggle del menú
-    menuHamburguesa.addEventListener('click', () => {
+    menuHamburguesa.addEventListener('click', (e) => {
+        e.stopPropagation();
         const estaAbierto = document.body.classList.toggle('menu-abierto');
         
         // Cambiar icono
@@ -266,6 +267,9 @@ const botonIdioma = document.querySelector('.boton-idioma');
 const dropdownIdioma = document.querySelector('.dropdown-idioma');
 
 if (botonIdioma && dropdownIdioma) {
+    // Detectar si estamos en páginas de la carpeta pages/
+    const rutaBaseIdioma = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
+    
     // Toggle dropdown al hacer click en el botón
     botonIdioma.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -273,20 +277,19 @@ if (botonIdioma && dropdownIdioma) {
         
         // Cerrar búsqueda y menú hamburguesa si están abiertos
         const barraBusqueda = document.querySelector('.barra-busqueda-desplegable');
-        const nav = document.querySelector('nav');
         const menuHamburguesa = document.querySelector('.menu-hamburguesa');
         
         if (barraBusqueda) {
             barraBusqueda.classList.remove('activo');
         }
-        if (nav) {
-            nav.classList.remove('activo');
+        // Cerrar menú hamburguesa
+        if (document.body.classList.contains('menu-abierto')) {
+            document.body.classList.remove('menu-abierto');
             if (menuHamburguesa) {
                 const icono = menuHamburguesa.querySelector('img');
                 if (icono) {
-                    icono.classList.remove('activo');
-                    icono.src = 'assets/icons/menuicon.png';
-                    icono.alt = 'Icono de menú';
+                    icono.src = rutaBaseIdioma + 'menuicon.png';
+                    icono.alt = 'Abrir menú';
                 }
             }
         }
@@ -324,6 +327,9 @@ const botonBusqueda = document.querySelector('.boton-busqueda');
 const barraBusquedaDesplegable = document.querySelector('.barra-busqueda-desplegable');
 
 if (botonBusqueda && barraBusquedaDesplegable) {
+    // Detectar si estamos en páginas de la carpeta pages/
+    const rutaBaseBusqueda = window.location.pathname.includes('/pages/') ? '../assets/icons/' : 'assets/icons/';
+    
     // Toggle barra de búsqueda al hacer click en el botón
     botonBusqueda.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -333,14 +339,15 @@ if (botonBusqueda && barraBusquedaDesplegable) {
         if (dropdownIdioma) {
             dropdownIdioma.classList.remove('activo');
         }
-        if (nav) {
-            nav.classList.remove('activo');
+        // Cerrar menú hamburguesa
+        const menuHamburguesa = document.querySelector('.menu-hamburguesa');
+        if (document.body.classList.contains('menu-abierto')) {
+            document.body.classList.remove('menu-abierto');
             if (menuHamburguesa) {
                 const icono = menuHamburguesa.querySelector('img');
                 if (icono) {
-                    icono.classList.remove('activo');
-                    icono.src = 'assets/icons/menuicon.png';
-                    icono.alt = 'Icono de menú';
+                    icono.src = rutaBaseBusqueda + 'menuicon.png';
+                    icono.alt = 'Abrir menú';
                 }
             }
         }
