@@ -1,0 +1,153 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - RUTA.HTML
+   Archivo: ruta.css
+   Descripción: Estilos exclusivos de la página de detalle de ruta
+   ============================================ */
+
+/* ============================================
+   DETALLE RUTA
+   ============================================ */
+
+.encabezado-ruta {
+    background-color: var(--verde-montania);
+    color: var(--blanco-nieve);
+    padding: var(--espaciado-xlarge) var(--espaciado-medio);
+    text-align: center;
+}
+
+.encabezado-ruta h1 {
+    color: var(--blanco-nieve);
+}
+
+/* Página en construcción - Ruta */
+.heroe-ruta-construccion {
+    min-height: 40vh;
+    background: linear-gradient(135deg, var(--verde-bosque) 0%, var(--verde-cerceta) 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenido-heroe-ruta {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: var(--blanco-nieve);
+    padding: var(--espaciado-xxlarge) var(--espaciado-medio);
+}
+
+.contenido-heroe-ruta h1 {
+    color: var(--blanco-nieve);
+    margin-bottom: var(--espaciado-medio);
+}
+
+.contenido-heroe-ruta p {
+    font-size: 1.25rem;
+    margin-bottom: 0;
+}
+
+.mensaje-construccion {
+    background-color: var(--blanco-fondo);
+    padding: var(--espaciado-xxlarge) var(--espaciado-medio);
+    text-align: center;
+    margin: var(--espaciado-xlarge) auto;
+    max-width: 900px;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-media);
+}
+
+.mensaje-construccion h2 {
+    color: var(--verde-bosque);
+    margin-bottom: var(--espaciado-medio);
+    font-size: 2rem;
+}
+
+.mensaje-construccion .texto-destacado {
+    color: var(--gris-sombra);
+    font-size: 1.125rem;
+    margin-bottom: var(--espaciado-medio);
+    line-height: 1.6;
+}
+
+.mensaje-construccion p {
+    color: var(--gris-sombra);
+    line-height: 1.6;
+    margin-bottom: var(--espaciado-xlarge);
+}
+
+.mensaje-construccion .boton-primario {
+    display: inline-block;
+}
+
+.seccion-mapa-ruta {
+    background-color: #ffffff;
+}
+
+.acciones-ruta {
+    background-color: var(--blanco-nieve);
+    padding: var(--espaciado-grande) var(--espaciado-medio);
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-medio);
+    align-items: center;
+}
+
+.seccion-descripcion-ruta {
+    background-color: #ffffff;
+}
+
+.contenido-descripcion p {
+    margin-bottom: var(--espaciado-medio);
+}
+
+.perfil-ruta {
+    background-color: var(--blanco-nieve);
+}
+
+.estadisticas {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--espaciado-medio);
+    margin-top: var(--espaciado-grande);
+}
+
+.estadistica {
+    background-color: #ffffff;
+    padding: var(--espaciado-grande);
+    border-radius: var(--radio-borde);
+    text-align: center;
+    box-shadow: var(--sombra-suave);
+    border-left: 4px solid var(--verde-claro);
+}
+
+.estadistica h3 {
+    color: var(--verde-bosque);
+    font-size: var(--tamano-h4);
+    margin-bottom: var(--espaciado-pequenio);
+}
+
+.estadistica p {
+    color: var(--negro-profundo);
+    font-size: var(--tamano-h3);
+    font-weight: var(--peso-negrita);
+    margin: 0;
+}
+
+.seccion-rutas-relacionadas {
+    background-color: #ffffff;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    /* Detalle de ruta - layout dos columnas */
+    .informacion-ruta {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: var(--espaciado-xlarge);
+    }
+}

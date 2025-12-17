@@ -1,0 +1,142 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - MAPA-RUTAS.HTML
+   Archivo: mapa-rutas.css
+   Descripción: Estilos exclusivos de la página del mapa de rutas
+   ============================================ */
+
+/* ============================================
+   FILTROS
+   ============================================ */
+
+.filtros {
+    background-color: var(--blanco-nieve);
+}
+
+.formulario-filtro-rutas {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-medio);
+    background-color: #ffffff;
+    padding: var(--espaciado-grande);
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+.grupo-filtro {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-pequenio);
+}
+
+.grupo-filtro label {
+    font-weight: var(--peso-medio);
+    color: var(--verde-bosque);
+}
+
+.grupo-filtro input,
+.grupo-filtro select {
+    padding: var(--espaciado-pequenio) var(--espaciado-medio);
+    border: 1px solid var(--gris-sombra);
+    border-radius: var(--radio-borde-pequenio);
+    outline: none;
+    transition: var(--transicion-rapida);
+}
+
+.grupo-filtro input:focus,
+.grupo-filtro select:focus {
+    border-color: var(--verde-montania);
+    box-shadow: 0 0 0 2px rgba(56, 143, 76, 0.2);
+}
+
+/* Botón limpiar filtros */
+.boton-limpiar-filtros {
+    width: 100%;
+    margin-top: var(--espaciado-medio);
+    background-color: var(--verde-montania);
+    color: var(--blanco-nieve);
+    border: none;
+    padding: var(--espaciado-pequenio) var(--espaciado-medio);
+    border-radius: var(--radio-borde);
+    font-size: var(--tamano-texto);
+    font-family: var(--fuente-texto);
+    font-weight: var(--peso-medio);
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.boton-limpiar-filtros:hover {
+    background-color: var(--verde-montania-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   MAPA
+   ============================================ */
+
+.mapa {
+    background-color: #ffffff;
+}
+
+.contenedor-mapa {
+    background-color: var(--blanco-nieve);
+    border-radius: var(--radio-borde);
+    min-height: 500px;
+    box-shadow: var(--sombra-suave);
+    overflow: hidden;
+}
+
+#mapa-rutas,
+#mapa-detalle-ruta {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--radio-borde);
+}
+
+/* Controles de Leaflet (zoom) debajo del header */
+.leaflet-control-container {
+    z-index: 500 !important;
+}
+
+.leaflet-top,
+.leaflet-bottom {
+    z-index: 500 !important;
+}
+
+/* Estilos para marcadores del mapa */
+.marcador-principal {
+    background: none;
+    border: none;
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== TABLET - 768px a 1023px ========== */
+@media (min-width: 768px) {
+    /* Mapa de rutas */
+    #mapa {
+        height: 500px;
+    }
+}
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    /* Mapa de rutas - responsivo */
+    #mapa {
+        height: 600px;
+        border-radius: var(--radio-borde);
+    }
+    
+    .contenedor-mapa {
+        max-width: 100%;
+        margin: var(--espaciado-xlarge) 0;
+    }
+    
+    /* Lista de rutas lateral */
+    .lista-rutas-lateral {
+        max-height: 600px;
+    }
+}

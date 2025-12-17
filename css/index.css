@@ -1,0 +1,242 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - INDEX.HTML
+   Archivo: index.css
+   Descripción: Estilos exclusivos de la página principal
+   Nota: - Los estilos del hero están en styles.css (común a todas)
+         - Los estilos de noticias están en styles.css (compartidos con ultimas-novedades.html)
+   ============================================ */
+
+/* ============================================
+   RUTAS - CARRUSEL INDEX
+   ============================================ */
+
+.rutas {
+    background-color: var(--blanco-nieve);
+    padding-bottom: var(--espaciado-xxlarge);
+}
+
+.contenedor-carrusel {
+    position: relative;
+    margin-bottom: var(--espaciado-medio);
+}
+
+.carrusel-rutas {
+    display: flex;
+    gap: var(--espaciado-grande);
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: var(--espaciado-pequenio) var(--espaciado-grande);
+    /* Ocultar scrollbar pero mantener funcionalidad */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carrusel-rutas::-webkit-scrollbar {
+    display: none;
+}
+
+.tarjeta-ruta {
+    flex: 0 0 85%;
+    background-color: #ffffff;
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+    transition: var(--transicion-media);
+    scroll-snap-align: center;
+}
+
+.tarjeta-ruta:hover {
+    box-shadow: var(--sombra-media);
+    transform: translateY(-4px);
+}
+
+.tarjeta-ruta img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.contenido-tarjeta {
+    padding: var(--espaciado-medio);
+}
+
+.tarjeta-ruta h3 {
+    color: var(--verde-bosque);
+    margin-bottom: var(--espaciado-pequenio);
+}
+
+.tarjeta-ruta p {
+    margin-bottom: var(--espaciado-medio);
+    color: var(--gris-sombra);
+    font-size: var(--tamano-texto-pequenio);
+}
+
+.tarjeta-ruta .boton-primario {
+    width: 100%;
+    min-width: auto;
+    padding: var(--espaciado-pequenio) var(--espaciado-medio);
+    font-size: var(--tamano-texto);
+}
+
+/* Botones de navegación del carrusel */
+.boton-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--verde-bosque);
+    color: var(--blanco-nieve);
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: var(--transicion-rapida);
+    box-shadow: var(--sombra-media);
+}
+
+.boton-carrusel:hover {
+    background-color: var(--verde-bosque-hover);
+}
+
+.boton-carrusel img {
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+.boton-anterior {
+    left: 0;
+}
+
+.boton-siguiente {
+    right: 0;
+}
+
+/* Indicadores del carrusel */
+.indicadores-carrusel {
+    display: flex;
+    justify-content: center;
+    gap: var(--espaciado-pequenio);
+    margin-bottom: var(--espaciado-grande);
+}
+
+.indicador {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--gris-sombra);
+    cursor: pointer;
+    transition: var(--transicion-rapida);
+}
+
+.indicador.activo {
+    background-color: var(--verde-bosque);
+    width: 1.5rem;
+    border-radius: 0.3125rem;
+}
+
+/* Contenedor para centrar botón */
+.contenedor-boton-centrado {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--espaciado-grande);
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== TABLET - 768px a 1023px ========== */
+@media (min-width: 768px) {
+    
+    /* Carrusel de rutas - centrado */
+    .carrusel-rutas {
+        display: flex;
+        gap: var(--espaciado-grande);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: var(--espaciado-pequenio) calc((100vw - 320px) / 2 - 140px);
+    }
+    
+    .tarjeta-ruta {
+        flex: 0 0 320px;
+        scroll-snap-align: center;
+    }
+    
+    .boton-carrusel {
+        display: flex;
+    }
+}
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    
+    /* Secciones con mejor espaciado */
+    .rutas {
+        padding: var(--espaciado-xxlarge) 0;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .contenedor-carrusel {
+        position: relative;
+        max-width: 100%;
+        margin-bottom: var(--espaciado-grande);
+    }
+    
+    .carrusel-rutas {
+        display: flex;
+        gap: var(--espaciado-grande);
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding: var(--espaciado-pequenio) calc((100vw - 420px) / 2 - 180px);
+    }
+    
+    .tarjeta-ruta {
+        flex: 0 0 420px;
+        scroll-snap-align: center;
+        transition: transform var(--transicion-media), box-shadow var(--transicion-media);
+    }
+    
+    .tarjeta-ruta img {
+        height: 250px;
+    }
+    
+    .tarjeta-ruta:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--sombra-fuerte);
+    }
+    
+    .boton-carrusel {
+        display: flex;
+    }
+    
+    .boton-anterior {
+        left: var(--espaciado-medio);
+    }
+    
+    .boton-siguiente {
+        right: var(--espaciado-medio);
+    }
+    
+    /* Indicadores más discretos */
+    .indicadores-carrusel {
+        margin-top: var(--espaciado-grande);
+    }
+}
+
+/* ========== PANTALLAS EXTRA GRANDES - 1440px+ ========== */
+@media (min-width: 1440px) {
+    .heroe h1 {
+        font-size: 6rem;
+    }
+    
+    .heroe p {
+        font-size: 2rem;
+    }
+}

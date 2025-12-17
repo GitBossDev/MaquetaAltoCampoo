@@ -1,0 +1,119 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - CONTACTO.HTML
+   Archivo: contacto.css
+   Descripción: Estilos exclusivos de la página de contacto
+   ============================================ */
+
+/* ============================================
+   FORMULARIO CONTACTO
+   ============================================ */
+
+.informacion-contacto,
+.contacto-info {
+    background-color: var(--blanco-nieve);
+    padding: var(--espaciado-grande) var(--espaciado-medio);
+}
+
+.formulario-contacto {
+    background-color: var(--blanco-nieve);
+    padding: var(--espaciado-grande) var(--espaciado-medio);
+}
+
+.formulario-contacto form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.grupo-formulario,
+.form-grupo {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-pequenio);
+    margin-bottom: var(--espaciado-medio);
+}
+
+.grupo-formulario label,
+.form-grupo label {
+    font-weight: var(--peso-medio);
+    color: var(--verde-bosque);
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea,
+.grupo-formulario select,
+.form-grupo input,
+.form-grupo textarea,
+.form-grupo select {
+    padding: var(--espaciado-medio);
+    border: 1px solid var(--gris-sombra);
+    border-radius: var(--radio-borde-pequenio);
+    outline: none;
+    transition: var(--transicion-rapida);
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus,
+.grupo-formulario select:focus,
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+    border-color: var(--verde-montania);
+    box-shadow: 0 0 0 2px rgba(56, 143, 76, 0.2);
+}
+
+.grupo-formulario.checkbox,
+.form-grupo.checkbox {
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.grupo-formulario.checkbox input,
+.form-grupo.checkbox input {
+    width: auto;
+    margin-right: var(--espaciado-pequenio);
+}
+
+.grupo-formulario.checkbox label,
+.form-grupo.checkbox label {
+    font-weight: var(--peso-normal);
+    font-size: var(--tamano-texto-pequenio);
+}
+
+.grupo-formulario.checkbox a,
+.form-grupo.checkbox a {
+    color: var(--verde-montania);
+    text-decoration: underline;
+}
+
+.grupo-formulario.checkbox a:hover,
+.form-grupo.checkbox a:hover {
+    color: var(--verde-montania-hover);
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== TABLET - 768px a 1023px ========== */
+@media (min-width: 768px) {
+    /* Formularios más anchos */
+    .formulario-contacto,
+    .formulario-faq {
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    /* Formulario de contacto - layout mejorado */
+    .formulario-contacto {
+        max-width: 700px;
+    }
+    
+    .grupo-formulario-dos-columnas {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--espaciado-medio);
+    }
+}

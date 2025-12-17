@@ -1,0 +1,118 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - FAQ.HTML
+   Archivo: faq.css
+   Descripción: Estilos exclusivos de la página FAQ
+   ============================================ */
+
+/* ============================================
+   FAQ
+   ============================================ */
+
+.seccion-faq {
+    background-color: var(--blanco-nieve);
+    
+}
+
+.seccion-faq h3 {
+    padding: var(--espaciado-pequenio);
+    color: var(--verde-bosque);
+
+}
+
+.lista-faq {
+    display: flex;
+    flex-direction: column;
+    gap: var(--espaciado-medio);
+    padding: var(--espaciado-pequenio);
+}
+
+.elemento-faq {
+    background-color: var(--blanco-nieve);
+    border-radius: var(--radio-borde);
+    overflow: hidden;
+    box-shadow: var(--sombra-suave);
+}
+
+.pregunta-faq {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--espaciado-medio);
+    background-color: var(--verde-bosque);
+    color: var(--blanco-nieve);
+    font-weight: var(--peso-medio);
+    font-size: var(--tamano-texto);
+    text-align: left;
+    transition: var(--transicion-rapida);
+}
+
+.pregunta-faq:hover {
+    background-color: var(--verde-bosque-hover);
+}
+
+.pregunta-faq.activo {
+    background-color: var(--blanco-nieve);
+    color: var(--verde-bosque);
+}
+
+.pregunta-faq.activo .icono-faq {
+    filter: brightness(0) saturate(100%) invert(18%) sepia(48%) saturate(1789%) hue-rotate(145deg) brightness(95%) contrast(101%);
+}
+
+.pregunta-faq span:first-child {
+    flex: 1;
+    padding-right: var(--espaciado-medio);
+}
+
+.icono-faq {
+    width: 1.5rem;
+    height: 1.5rem;
+    transition: var(--transicion-media);
+    flex-shrink: 0;
+}
+
+.pregunta-faq[aria-expanded="true"] .icono-faq {
+    transform: none;
+}
+
+.respuesta-faq {
+    max-height: 0;
+    overflow: hidden;
+    transition: var(--transicion-media);
+}
+
+.respuesta-faq.activa {
+    max-height: 500px;
+}
+
+.respuesta-faq p {
+    padding: var(--espaciado-medio);
+    margin: 0;
+    color: var(--negro-profundo);
+    background-color: var(--blanco-nieve);
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== TABLET - 768px a 1023px ========== */
+@media (min-width: 768px) {
+    /* FAQ - Más ancho */
+    .contenedor-faq {
+        max-width: 700px;
+    }
+}
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    /* FAQ - layout optimizado */
+    .contenedor-faq {
+        max-width: 900px;
+    }
+    
+    .pregunta-faq {
+        font-size: 1.25rem;
+    }
+}

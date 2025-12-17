@@ -1,0 +1,106 @@
+/* ============================================
+   ESTILOS ESPECÍFICOS - CONTENIDO ESTÁTICO
+   Archivo: contenido.css
+   Descripción: Estilos para quienes-somos.html, otras-actividades.html y páginas similares
+   ============================================ */
+
+/* ============================================
+   CONTENIDO (Quienes somos, Otras actividades, etc)
+   ============================================ */
+
+.contenido {
+    background-color: var(--blanco-nieve);
+    padding: var(--espaciado-medio) var(--espaciado-grande);
+}
+
+.texto-contenido {
+    margin-bottom: var(--espaciado-grande);
+}
+
+.texto-contenido h3 {
+    color: var(--verde-bosque);
+    margin-top: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-medio);
+}
+
+.texto-contenido ul {
+    list-style: disc;
+    padding-left: var(--espaciado-grande);
+    margin-bottom: var(--espaciado-medio);
+}
+
+.texto-contenido li {
+    margin-bottom: var(--espaciado-pequenio);
+}
+
+.imagen-contenido {
+    margin-top: var(--espaciado-grande);
+    max-width: 600px; /* Tamaño máximo de la imagen - AJUSTAR AQUÍ */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.imagen-contenido img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radio-borde);
+    box-shadow: var(--sombra-suave);
+}
+
+/* ============================================
+   MEDIA QUERIES
+   ============================================ */
+
+/* ========== TABLET - 768px a 1023px ========== */
+@media (min-width: 768px) {
+    /* Actividades en grid */
+    .cuadricula-actividades {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Página Quiénes Somos - Layout mejorado */
+    .seccion-valores {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Imagen de contenido más grande en tablet */
+    .imagen-contenido {
+        max-width: 700px; /* Tamaño máximo en tablet*/
+    }
+}
+
+/* ========== DESKTOP - 1024px en adelante ========== */
+@media (min-width: 1024px) {
+    /* Actividades - 3 columnas */
+    .cuadricula-actividades {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--espaciado-xlarge);
+    }
+    
+    .tarjeta-actividad:hover {
+        transform: translateY(-8px);
+        box-shadow: var(--sombra-fuerte);
+    }
+    
+    /* Quiénes Somos - layout mejorado */
+    .seccion-valores {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--espaciado-xlarge);
+    }
+    
+    .tarjeta-valor:hover {
+        transform: translateY(-8px);
+    }
+    
+    /* Imagen de contenido en desktop */
+    .imagen-contenido {
+        max-width: 800px; /* Tamaño máximo en desktop - AJUSTAR AQUÍ */
+    }
+    
+    .seccion-equipo {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--espaciado-xlarge);
+        margin-top: var(--espaciado-xlarge);
+    }
+}
