@@ -1,7 +1,8 @@
-﻿// ============================================
-// DATOS DE RUTAS (Simulación de BBDD)
-// ============================================
+﻿// =========================
+// DATOS DE RUTAS EN ARRAYS
+// =========================
 
+// Simula las rutas en BBDD
 const rutasData = [
     {
         id: 1,
@@ -148,9 +149,9 @@ const rutasData = [
     }
 ];
 
-// ============================================
+// ===================
 // VARIABLES GLOBALES
-// ============================================
+// ===================
 
 let mapa;
 let marcadores = [];
@@ -161,9 +162,9 @@ let filtrosActivos = {
     actividad: []
 };
 
-// ============================================
+// ========================
 // INICIALIZACIÓN DEL MAPA
-// ============================================
+// ========================
 
 function inicializarMapa() {
     const contenedorMapa = document.getElementById('mapa-rutas');
@@ -175,7 +176,7 @@ function inicializarMapa() {
     // Determinar zoom inicial según ancho de pantalla
     let zoomInicial = 14;
     if (window.innerWidth >= 1024) {
-        zoomInicial = 13; // Desktop - más zoom out para ver más área
+        zoomInicial = 13; // Desktop
     } else if (window.innerWidth >= 768) {
         zoomInicial = 13; // Tablet
     } else {
@@ -218,9 +219,9 @@ function ajustarVistaAlContenido() {
     }
 }
 
-// ============================================
+// ======================
 // GESTIÓN DE MARCADORES
-// ============================================
+// ======================
 
 function mostrarRutas(rutas) {
     // Limpiar marcadores existentes
@@ -243,9 +244,9 @@ function mostrarRutas(rutas) {
     });
 }
 
-// ============================================
+// ===================
 // SISTEMA DE FILTROS
-// ============================================
+// ===================
 
 function aplicarFiltros() {
     let rutasFiltradas = rutasData;
@@ -306,9 +307,9 @@ function limpiarFiltros() {
     mostrarRutas(rutasData);
 }
 
-// ============================================
+// ===============
 // INICIALIZACIÓN
-// ============================================
+// ===============
 
 document.addEventListener('DOMContentLoaded', () => {
     inicializarMapa();

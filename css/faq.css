@@ -1,12 +1,10 @@
 /* ============================================
-   ESTILOS ESPECÍFICOS - FAQ.HTML
-   Archivo: faq.css
-   Descripción: Estilos exclusivos de la página FAQ
+   ESTILOS ESPECÍFICOS - FAQ
    ============================================ */
 
-/* ============================================
+/* ====
    FAQ
-   ============================================ */
+   ==== */
 
 .seccion-faq {
     background-color: var(--blanco-nieve);
@@ -93,9 +91,9 @@
     background-color: var(--blanco-nieve);
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {

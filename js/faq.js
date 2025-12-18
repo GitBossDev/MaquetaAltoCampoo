@@ -2,9 +2,11 @@
 // FAQ - ACORDEÓN
 // ============================================
 
+// Al hacer clic en una pregunta, se despliega su respuesta y se actualiza el icono.
 document.addEventListener('DOMContentLoaded', () => {
     const preguntasFaq = document.querySelectorAll('.pregunta-faq');
     
+    // Iterar sobre cada pregunta FAQ
     preguntasFaq.forEach(pregunta => {
         pregunta.addEventListener('click', () => {
             const respuesta = pregunta.nextElementSibling;

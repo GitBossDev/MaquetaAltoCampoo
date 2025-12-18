@@ -1,12 +1,10 @@
 /* ============================================
-   ESTILOS ESPECÍFICOS - CONTACTO.HTML
-   Archivo: contacto.css
-   Descripción: Estilos exclusivos de la página de contacto
+   ESTILOS ESPECÍFICOS - CONTACTO
    ============================================ */
 
-/* ============================================
-   FORMULARIO CONTACTO
-   ============================================ */
+/* ===========
+   FORMULARIO 
+   =========== */
 
 .informacion-contacto,
 .contacto-info {
@@ -90,9 +88,9 @@
     color: var(--verde-montania-hover);
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {

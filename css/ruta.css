@@ -1,12 +1,11 @@
 /* ============================================
-   ESTILOS ESPECÍFICOS - RUTA.HTML
-   Archivo: ruta.css
-   Descripción: Estilos exclusivos de la página de detalle de ruta
+   ESTILOS ESPECÍFICOS - RUTA
+   PROPUESTA PAR PAGINA EN CONSTRUCCION
    ============================================ */
 
-/* ============================================
+/* =============
    DETALLE RUTA
-   ============================================ */
+   ============= */
 
 .encabezado-ruta {
     background-color: var(--verde-montania);
@@ -138,9 +137,9 @@
     background-color: #ffffff;
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== DESKTOP - 1024px en adelante ========== */
 @media (min-width: 1024px) {

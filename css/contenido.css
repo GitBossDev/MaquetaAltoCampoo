@@ -1,12 +1,11 @@
 /* ============================================
    ESTILOS ESPECÍFICOS - CONTENIDO ESTÁTICO
-   Archivo: contenido.css
-   Descripción: Estilos para quienes-somos.html, otras-actividades.html y páginas similares
+   ESTILOS PARA QUIENES-SOMOS, OTRAS-ACTIVIDADES Y PAGINAS DE TEXTO SIMILAR
    ============================================ */
 
-/* ============================================
-   CONTENIDO (Quienes somos, Otras actividades, etc)
-   ============================================ */
+/* ==========
+   CONTENIDO
+   ========== */
 
 .contenido {
     background-color: var(--blanco-nieve);
@@ -35,7 +34,7 @@
 
 .imagen-contenido {
     margin-top: var(--espaciado-grande);
-    max-width: 600px; /* Tamaño máximo de la imagen - AJUSTAR AQUÍ */
+    max-width: 600px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -47,9 +46,9 @@
     box-shadow: var(--sombra-suave);
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {
@@ -65,7 +64,7 @@
     
     /* Imagen de contenido más grande en tablet */
     .imagen-contenido {
-        max-width: 700px; /* Tamaño máximo en tablet*/
+        max-width: 700px;
     }
 }
 
@@ -94,7 +93,7 @@
     
     /* Imagen de contenido en desktop */
     .imagen-contenido {
-        max-width: 800px; /* Tamaño máximo en desktop - AJUSTAR AQUÍ */
+        max-width: 800px; /* Tamaño máximo en desktop */
     }
     
     .seccion-equipo {

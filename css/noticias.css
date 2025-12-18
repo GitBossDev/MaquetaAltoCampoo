@@ -1,7 +1,6 @@
 /* ============================================
    ESTILOS ESPECÍFICOS - NOTICIAS
-   Archivo: noticias.css
-   Descripción: Estilos para ultimas-novedades.html y noticia.html
+   ESPECIFICO PARA ULTIMAS-NOVEDADES Y NOTICIA
    ============================================ */
 
 /* ============================================
@@ -99,9 +98,9 @@
     border-color: var(--verde-bosque);
 }
 
-/* ============================================
-   DETALLE NOTICIA (noticia.html)
-   ============================================ */
+/* ================
+   DETALLE NOTICIA
+   ================ */
 
 .heroe-noticia {
     position: relative;
@@ -255,9 +254,9 @@
     font-weight: var(--peso-medio);
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {

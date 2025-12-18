@@ -1,12 +1,10 @@
-/* ============================================
+/* ========================================
    ESTILOS GENERALES - ALTO CAMPOO TURISMO
-   Archivo: styles.css
-   Descripción: Estilos comunes para todas las páginas
-   ============================================ */
+   ========================================*/
 
-/* ============================================
-   FUENTES LOCALES
-   ============================================ */
+/* =============================
+   FUENTES ALMACENADAS EN LOCAL
+   ============================= */
 
 @font-face {
     font-family: 'Alumni Sans';
@@ -43,7 +41,7 @@
 }
 
 /* ============================================
-   VARIABLES CSS - ALTO CAMPOO TURISMO
+   VARIABLES CSS - GUIA DE ESTILOS ACTUALIZADA
    ============================================ */
 
 :root {
@@ -68,7 +66,7 @@
     --fuente-titulos: 'Alumni Sans', sans-serif;
     --fuente-texto: 'Roboto', sans-serif;
     
-    /* Tamaños de fuente */
+    /* Tamaños de fuente - equivalencias */
     --tamano-h1: 2.75rem; /* 48px */
     --tamano-h2: 2.25rem; /* 36px */
     --tamano-h3: 1.75rem; /* 28px */
@@ -108,9 +106,9 @@
     --transicion-lenta: 0.5s ease-in-out;
 }
 
-/* ============================================
+/* =====================
    RESET Y ESTILOS BASE
-   ============================================ */
+   ===================== */
 
 * {
     margin: 0;
@@ -161,9 +159,9 @@ input, textarea, select {
     font-size: var(--tamano-texto);
 }
 
-/* ============================================
+/* ===========
    TIPOGRAFÍA
-   ============================================ */
+   =========== */
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--fuente-titulos);
@@ -192,9 +190,9 @@ p {
     margin-bottom: var(--espaciado-medio);
 }
 
-/* ============================================
+/* =======
    HEADER
-   ============================================ */
+   ======= */
 
 header {
     background-color: var(--verde-bosque);
@@ -224,7 +222,7 @@ header .logo img {
 .grupo-iconos-derecha {
     display: flex;
     align-items: center;
-    gap: 0.7rem; /* 11px */
+    gap: 0.7rem;
 }
 
 .grupo-iconos-derecha .idioma,
@@ -239,8 +237,8 @@ header .logo img {
 /* Líneas separadoras verticales entre iconos */
 .grupo-iconos-derecha .busqueda,
 .grupo-iconos-derecha .menu-hamburguesa {
-    border-left: 0.1rem solid var(--blanco-nieve); /* 1px */
-    padding-left: 0.7rem; /* 11px */
+    border-left: 0.1rem solid var(--blanco-nieve);
+    padding-left: 0.7rem;
 }
 
 /* Botones de idioma y búsqueda */
@@ -324,9 +322,9 @@ nav a:focus {
     color: var(--blanco-nieve);
 }
 
-/* ============================================
+/* =================
    DROPDOWN IDIOMAS
-   ============================================ */
+   ================= */
 
 .dropdown-idioma {
     display: none;
@@ -338,7 +336,7 @@ nav a:focus {
     box-shadow: var(--sombra-media);
     padding: var(--espaciado-pequenio);
     margin-top: var(--espaciado-pequenio);
-    min-width: 10rem; /* 160px */
+    min-width: 10rem;
     z-index: 1000;
 }
 
@@ -370,9 +368,9 @@ nav a:focus {
     font-weight: var(--peso-medio);
 }
 
-/* ============================================
+/* ==============================
    BARRA DE BÚSQUEDA DESPLEGABLE
-   ============================================ */
+   ============================== */
 
 .barra-busqueda-desplegable {
     display: none;
@@ -384,7 +382,7 @@ nav a:focus {
     box-shadow: var(--sombra-media);
     padding: var(--espaciado-medio);
     margin-top: var(--espaciado-pequenio);
-    min-width: 15rem; /* 240px */
+    min-width: 15rem;
     z-index: 1000;
 }
 
@@ -407,9 +405,9 @@ nav a:focus {
     color: var(--gris-sombra);
 }
 
-/* ============================================
+/* ========
    BOTONES
-   ============================================ */
+   ======== */
 
 .boton-primario,
 .boton-secundario,
@@ -425,7 +423,7 @@ nav a:focus {
     transition: var(--transicion-rapida);
     cursor: pointer;
     text-decoration: none;
-    min-width: 12.5rem; /* 200px */
+    min-width: 12.5rem;
 }
 
 /* Botón primario - Relleno verde */
@@ -451,7 +449,7 @@ nav a:focus {
     border: var(--grosor-borde) solid var(--verde-bosque);
     font-size: var(--tamano-boton-secundario);
     min-width: 11rem;
-    padding: 0.875rem var(--espaciado-grande); /* 14px vertical */
+    padding: 0.875rem var(--espaciado-grande);
 }
 
 .boton-secundario:hover,
@@ -463,14 +461,14 @@ nav a:focus {
     border: var(--grosor-borde) solid var(--verde-bosque-hover);
 }
 
-/* Boton terciario - Usado en VER más de rutas y noticias */
+/* Boton terciario */
 .boton-terciario {
     background-color: var(--blanco-nieve);
     color: var(--verde-bosque);
     border: var(--grosor-borde) solid var(--verde-bosque);
     font-size: var(--tamano-boton-secundario);
     min-width: 11rem;
-    padding: 0.875rem var(--espaciado-grande); /* 14px vertical */
+    padding: 0.875rem var(--espaciado-grande);
 }
 
 .boton-terciario:hover,
@@ -482,9 +480,9 @@ nav a:focus {
     border: var(--grosor-borde) solid var(--verde-bosque-hover);
 }
 
-/* ============================================
+/* ======================
    SECCIONES PRINCIPALES
-   ============================================ */
+   ====================== */
 
 main {
     min-height: calc(100vh - 200px);
@@ -500,9 +498,9 @@ section h2 {
     color: var(--verde-bosque);
 }
 
-/* ============================================
-   HERO / HEROE (Común a múltiples páginas)
-   ============================================ */
+/* =============
+   HERO / HEROE
+   ============= */
 
 .heroe {
     position: relative;
@@ -563,9 +561,9 @@ section h2 {
     align-items: center;
 }
 
-/* ============================================
-   NOTICIAS (Compartido: index.html y ultimas-novedades.html)
-   ============================================ */
+/* ======================================
+   NOTICIAS (INDEX Y PÁGINA DE NOTICIAS)
+   ====================================== */
 
 .noticias {
     background-color: var(--blanco-nieve);
@@ -613,7 +611,7 @@ section h2 {
 /* Efecto de difuminado en preview de noticias */
 .preview-noticia {
     position: relative;
-    max-height: 6em; /* Aproximadamente 4 líneas */
+    max-height: 6em;
     overflow: hidden;
     line-height: 1.5em;
 }
@@ -639,9 +637,9 @@ section h2 {
     font-style: italic;
 }
 
-/* ============================================
+/* =====================================
    UTILIDAD - CONTENEDOR BOTÓN CENTRADO
-   ============================================ */
+   =====================================*/
 
 .contenedor-boton-centrado {
     display: flex;
@@ -649,9 +647,9 @@ section h2 {
     margin-top: var(--espaciado-grande);
 }
 
-/* ============================================
+/* =======
    FOOTER
-   ============================================ */
+   ======== */
 
 footer {
     background-color: var(--verde-bosque);
@@ -685,9 +683,9 @@ footer {
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 18.75rem; /* 300px */
+    max-width: 18.75rem;
     min-width: 6rem;
-    height: 3rem; /* 48px */
+    height: 3rem;
     transition: var(--transicion-rapida);
 }
 
@@ -730,16 +728,16 @@ footer {
     margin-bottom: var(--espaciado-pequenio);
 }
 
-/* Iconos de contacto (locales) */
+/* Iconos de contacto */
 .icono-contacto {
-    height: 1.125rem; /* 18px */
+    height: 1.125rem;
     width: 1.125rem;
 }
 
 /* Iconos sociales en fila horizontal */
 .iconos-sociales {
     display: flex;
-    gap: var(--espaciado-pequenio); /* 8px entre iconos */
+    gap: var(--espaciado-pequenio);
     align-items: center;
 }
 
@@ -747,22 +745,21 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0.5rem; /* 8px */
+    padding: 0.5rem;
     border-radius: var(--radio-borde-pequenio);
     transition: var(--transicion-rapida);
 }
 
 .iconos-sociales a:hover {
-    transform: translateY(-0.125rem); /* -2px */
+    transform: translateY(-0.125rem);
 }
 
 .iconos-sociales img {
     height: 2.25rem; /* 36px - WCAG AA*/
     width: 2.25rem; 
-    filter: brightness(0) invert(1); /* Hacer iconos blancos */
+    filter: brightness(0) invert(1);
 }
 
-/* Mantener estilos antiguos para compatibilidad */
 .enlaces-sociales a {
     display: flex;
     align-items: center;
@@ -796,9 +793,9 @@ footer {
     color: var(--blanco-nieve);
 }
 
-/* ============================================
+/* ===========
    UTILIDADES
-   ============================================ */
+   =========== */
 
 .texto-centro {
     text-align: center;
@@ -813,9 +810,9 @@ footer {
     border-top: 1px solid var(--gris-sombra);
 }
 
-/* ============================================
+/* =================================
    ESTADOS DE CARGA Y ACCESIBILIDAD
-   ============================================ */
+   ================================= */
 
 :focus-visible {
     outline: 2px solid var(--verde-claro);
@@ -835,9 +832,9 @@ footer {
     border-width: 0;
 }
 
-/* ============================================
+/* ==================================
    MEDIA QUERIES - RESPONSIVE DESIGN
-   ============================================ */
+   ================================== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {
@@ -858,10 +855,10 @@ footer {
     }
     
     header .logo img {
-        height: 3rem; /* Logo más grande */
+        height: 3rem;
     }
     
-    /* Menú hamburguesa sigue visible en tablet */
+    /* Menú hamburguesa visible en tablet */
     .menu-hamburguesa {
         display: flex;
     }
@@ -1069,7 +1066,7 @@ footer {
         min-width: 350px;
     }
     
-    /* Hero ocupando 2/3 de la pantalla */
+    /* Hero ocupando 2/3 de la pantalla aprox */
     .heroe {
         min-height: 67vh;
         display: flex;
@@ -1218,6 +1215,7 @@ footer {
 }
 
 /* ========== PANTALLAS EXTRA GRANDES - 1440px+ ========== */
+/* Casos exceptionales para pantallas muy grandes */
 @media (min-width: 1440px) {
     :root {
         --tamano-h1: 4.5rem; /* 72px */

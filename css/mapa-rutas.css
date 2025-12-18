@@ -1,12 +1,10 @@
 /* ============================================
-   ESTILOS ESPECÍFICOS - MAPA-RUTAS.HTML
-   Archivo: mapa-rutas.css
-   Descripción: Estilos exclusivos de la página del mapa de rutas
+   ESTILOS ESPECÍFICOS - MAPA-RUTAS
    ============================================ */
 
-/* ============================================
+/* ========
    FILTROS
-   ============================================ */
+   ======== */
 
 .filtros {
     background-color: var(--blanco-nieve);
@@ -71,9 +69,9 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
-/* ============================================
+/* =====
    MAPA
-   ============================================ */
+   ===== */
 
 .mapa {
     background-color: #ffffff;
@@ -110,9 +108,9 @@
     border: none;
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {

@@ -1,14 +1,11 @@
 /* ============================================
-   ESTILOS ESPECÍFICOS - INDEX.HTML
+   ESTILOS ESPECÍFICOS - INDEX
    Archivo: index.css
-   Descripción: Estilos exclusivos de la página principal
-   Nota: - Los estilos del hero están en styles.css (común a todas)
-         - Los estilos de noticias están en styles.css (compartidos con ultimas-novedades.html)
    ============================================ */
 
-/* ============================================
+/* =======================
    RUTAS - CARRUSEL INDEX
-   ============================================ */
+   ======================= */
 
 .rutas {
     background-color: var(--blanco-nieve);
@@ -147,9 +144,9 @@
     margin-top: var(--espaciado-grande);
 }
 
-/* ============================================
+/* ==============
    MEDIA QUERIES
-   ============================================ */
+   ============== */
 
 /* ========== TABLET - 768px a 1023px ========== */
 @media (min-width: 768px) {

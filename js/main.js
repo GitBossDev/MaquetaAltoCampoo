@@ -1,6 +1,6 @@
-// ============================================
-// MENÚ HAMBURGUESA - ENFOQUE CSS-FIRST
-// ============================================
+// =====================================
+// MENÚ HAMBURGUESA - EN MOVIL Y TABLET
+// =====================================
 
 (function() {
     const menuHamburguesa = document.querySelector('.menu-hamburguesa');
@@ -66,9 +66,10 @@
     });
 })();
 
-// ============================================
-// CARRUSEL DE RUTAS - INFINITO CON CLONES
-// ============================================
+
+// ==================
+// CARRUSEL DE RUTAS 
+// ==================
 
 const carrusel = document.querySelector('.carrusel-rutas');
 const botonAnterior = document.querySelector('.boton-anterior');
@@ -259,10 +260,11 @@ if (carrusel && botonAnterior && botonSiguiente) {
     }, 150);
 }
 
-// ============================================
+// ====================
 // DROPDOWN DE IDIOMAS
-// ============================================
+// ====================
 
+// Maneja el dropdown simulando el cambio de idioma (placeholder)
 const botonIdioma = document.querySelector('.boton-idioma');
 const dropdownIdioma = document.querySelector('.dropdown-idioma');
 
@@ -306,7 +308,7 @@ if (botonIdioma && dropdownIdioma) {
             // Cerrar dropdown
             dropdownIdioma.classList.remove('activo');
             
-            // Placeholder: aquí iría la lógica real de cambio de idioma
+            // Placeholder
             console.log('Idioma seleccionado:', opcion.dataset.lang);
         });
     });
@@ -319,10 +321,11 @@ if (botonIdioma && dropdownIdioma) {
     });
 }
 
-// ============================================
+// ==============================
 // BARRA DE BÚSQUEDA DESPLEGABLE
-// ============================================
+// ==============================
 
+// Maneja la barra de búsqueda desplegable (placeholder)
 const botonBusqueda = document.querySelector('.boton-busqueda');
 const barraBusquedaDesplegable = document.querySelector('.barra-busqueda-desplegable');
 
@@ -359,13 +362,13 @@ if (botonBusqueda && barraBusquedaDesplegable) {
         }
     });
 
-    // Placeholder: evento de búsqueda (no ejecuta nada real)
+    // Placeholder: evento de búsqueda (no ejecuta nada)
     const inputBusqueda = barraBusquedaDesplegable.querySelector('input');
     if (inputBusqueda) {
         inputBusqueda.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 console.log('Búsqueda:', inputBusqueda.value);
-                // Placeholder: aquí iría la lógica real de búsqueda
+                // Placeholder
                 barraBusquedaDesplegable.classList.remove('activo');
             }
         });
